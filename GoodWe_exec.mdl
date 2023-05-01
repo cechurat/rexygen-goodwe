@@ -1,0 +1,200 @@
+Model {
+  Name                    "GoodWe_exec"
+  Version                 3.00
+  #RexVersion             "2.52.0 rev. 14865, Date 2023-01-04"
+  ShowPortLabels          on
+  SavedCharacterEncoding  "UTF-8"
+  MaskType                "REX sequence"
+  MaskIconFrame           on
+  MaskIconOpaque          on
+  MaskIconRotate          "none"
+  MaskIconUnits           "autoscale"
+  BlockDefaults {
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    NamePlacement           "normal"
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+    ShowName                on
+    Orientation             "right"
+  }
+  AnnotationDefaults {
+    HorizontalAlignment     "left"
+    VerticalAlignment       "middle"
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  LineDefaults {
+    FontName                "Arial"
+    FontSize                9
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  System {
+    Name                    "GoodWe_exec"
+    Location                [11, 35, 260, 449]
+    __ProjectState          "{\"runtime_mode\":0,\"simstepsinput_ticks\":1000,\"simstepsinput_time\":\"00:00:00.000\",\"simstepsinput_unit\":0,\"tabs\":{\"windows\":[{\"id\":\"tabs11\",\"tabs\":[{\"class\":\"mdl\",\"id\":\"GoodWe_exec.mdl\"},{\"class\":\"mdl\",\"id\":\"GoodWe_task.mdl\"}]}]},\"watch_panel\":{\"signals\":[]}}"
+    #GUID                   764087fb-0120-425a-b6c4-f0ad598d1aba
+    Block {
+      BlockType               Reference
+      Name                    "EXEC"
+      Ports                   [0, 8, 0, 0, 0]
+      Position                [20, 48, 65, 337]
+      SourceBlock             "execlib/EXEC"
+      target                  "Generic target device"
+      tick                    "0.01"
+      ntick0                  1
+      ntick1                  50
+      ntick2                  100
+      ntick3                  1200
+      pri0                    5
+      pri1                    9
+      pri2                    13
+      pri3                    18
+      FontSize                10
+      cpu0                    -1
+      cpu1                    -1
+      cpu2                    -1
+      cpu3                    -1
+      #GUID                   de17c7ee-dee3-4f61-8c92-00f8c48d94fd
+    }
+    Block {
+      BlockType               Reference
+      Name                    "GoodWe_task"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [105, 203, 155, 217]
+      SourceBlock             "execlib/TASK"
+      factor                  1
+      start                   0
+      stop                    1
+      stack                   10240
+      filename                "GoodWe_task"
+      MDLOPEN                 on
+      FontSize                10
+      #RTFlags                5
+      #GUID                   d3816513-7d3d-4914-9ea4-6b2fe6fcae06
+    }
+    Block {
+      BlockType               Reference
+      Name                    "HMI"
+      Ports                   [0, 0, 0, 0, 0]
+      Position                [100, 323, 150, 337]
+      SourceBlock             "execlib/HMI"
+      IncludeHMI              off
+      HmiDir                  "hmi"
+      SourceDir               "hmisrc"
+      GenerateWebWatch        off
+      GenerateRexHMI          off
+      RedirectToHMI           on
+      Compression             off
+      FontSize                10
+      #GUID                   8499fda3-216f-46d4-81bc-66e79ca792d8
+    }
+    Block {
+      BlockType               Reference
+      Name                    "INFO"
+      Ports                   [0, 0, 0, 0, 0]
+      Position                [100, 293, 150, 307]
+      SourceBlock             "execlib/INFO"
+      Title                   "REXYGEN GoodWe Driver"
+      Author                  "Tomas Cechura"
+      Description             "REXYGEN driver for GoodWe Inverters ET series"
+      Customer                ""
+      FontSize                10
+      #GUID                   9e57a0b9-2ba4-4dcf-9b83-ddcc9e0aec8c
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MBM"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [175, 98, 225, 112]
+      SourceBlock             "execlib/IODRV"
+      module                  "MbDrv"
+      classname               "MbmDrv"
+      cfgname                 "GoodWe_RTU_cfg.rio"
+      factor                  2
+      stack                   10240
+      pri                     3
+      timer                   off
+      FontSize                10
+      cpu                     -1
+      #GUID                   d7518740-c58e-4ee4-bd61-c4960d1b7365
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MNR"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [100, 98, 150, 112]
+      SourceBlock             "execlib/IODRV"
+      module                  "MonarcoDrv"
+      classname               "MonarcoHatDrv"
+      cfgname                 "monarcohat.rio"
+      factor                  1
+      stack                   10240
+      pri                     3
+      timer                   off
+      cpu                     -1
+      #RTFlags                5
+      FontSize                10
+      #GUID                   381e3fd3-c547-4098-8693-ba9b2f153906
+    }
+    Block {
+      BlockType               Reference
+      Name                    "PROJECT"
+      Ports                   [0, 0, 0, 0, 0]
+      Position                [100, 258, 150, 272]
+      SourceBlock             "execlib/PROJECT"
+      CompileParams           ""
+      SourcesOnTarget         on
+      TargetURL               ""
+      LibraryPath             ""
+      FontSize                10
+      PreBuild                ""
+      PostBuild               ""
+      #GUID                   9444c809-f3f5-45a7-b497-008d35ed24a7
+    }
+    Line {
+      SrcBlock                "EXEC"
+      SrcPort                 2
+      DstBlock                "MNR"
+      DstPort                 1
+      #GUID                   ac774c94-3a9c-4354-8820-df0d20a37059
+    }
+    Line {
+      SrcBlock                "EXEC"
+      SrcPort                 5
+      DstBlock                "GoodWe_task"
+      DstPort                 1
+      #GUID                   19318977-d14e-4bd5-a623-25d2d3fdd4ba
+    }
+    Line {
+      SrcBlock                "MNR"
+      SrcPort                 1
+      DstBlock                "MBM"
+      DstPort                 1
+      #GUID                   566db493-82ae-4045-ba81-5cb2eb4a92a3
+    }
+    Annotation {
+      Position                [15, 10]
+      Text                    "REXYGEN GoodWe Driver"
+      FontWeight              "bold"
+      FontSize                16
+      HorizontalAlignment     "left"
+      VerticalAlignment       "top"
+      BackgroundColor         [1, 1, 1]
+      BgOpacity               100
+      Autosize                on
+      Width                   150
+      Height                  150
+      #GUID                   9b57d252-1a29-4676-a03d-eee70c278a28
+    }
+  }
+}

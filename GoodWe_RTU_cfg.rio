@@ -1,0 +1,32 @@
+Modbus {
+  Name                    "/dev/ttyAMA0"
+  BaudRate                115200
+  Parity                  0
+  SyncTime                0
+  SpaceTime               0
+  Timeout                 100
+  Flags                   0
+  Gap                     10000
+  #GUID                   f24fd96a-259a-4ab7-a8ec-e73a809185d8
+  Item {
+    Name                    "reg"
+    SlaveAdr                247
+    RegisterAdr             35103
+    Type                    0x00000204
+    Count                   1
+  }
+  Item {
+    Name                    "RTC"
+    SlaveAdr                247
+    RegisterAdr             35100
+    Type                    0x00000204
+    Count                   3
+  }
+  Item {
+    Name                    "RTC2"
+    SlaveAdr                247
+    RegisterAdr             45132
+    Type                    0x00000204
+    Count                   2
+  }
+}

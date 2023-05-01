@@ -1,0 +1,78 @@
+Model {
+  Name                    "GoodWe_task"
+  Version                 3.00
+  #RexVersion             "2.52.0 rev. 14865, Date 2023-01-04"
+  ShowPortLabels          on
+  SavedCharacterEncoding  "UTF-8"
+  MaskType                "REX sequence"
+  MaskIconFrame           on
+  MaskIconOpaque          on
+  MaskIconRotate          "none"
+  MaskIconUnits           "autoscale"
+  BlockDefaults {
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    NamePlacement           "normal"
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+    ShowName                on
+    Orientation             "right"
+  }
+  AnnotationDefaults {
+    HorizontalAlignment     "left"
+    VerticalAlignment       "middle"
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  LineDefaults {
+    FontName                "Arial"
+    FontSize                9
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  System {
+    Name                    "GoodWe_task"
+    Location                [280, 36, 1347, 873]
+    SigNames                ""
+    #GUID                   55e50adb-48b8-42ff-a0e8-0bf151040f8b
+    Block {
+      BlockType               From
+      Name                    "From1"
+      Position                [35, 43, 125, 57]
+      ShowName                off
+      GotoTag                 "MBM__reg"
+      BackgroundColor         "yellow"
+      FontSize                10
+      #GUID                   1a1266c0-768d-4749-8fb0-155356188987
+      #SignalWatchMask        01
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MBM__RTC"
+      Ports                   [0, 4, 0, 0, 0]
+      Position                [55, 92, 85, 138]
+      SourceBlock             "inoutlib/INQUAD"
+      FontSize                10
+      #GUID                   e6d32c6d-1b52-4dcf-8879-607433ef7e09
+      #SignalWatchMask        0f
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MBM__RTC2"
+      Ports                   [0, 4, 0, 0, 0]
+      Position                [55, 167, 85, 213]
+      SourceBlock             "inoutlib/INQUAD"
+      FontSize                10
+      #GUID                   84487b37-80b5-4b6a-b9a5-87a84f0d9680
+      #SignalWatchMask        0f
+    }
+  }
+}
