@@ -5,9 +5,9 @@ Modbus {
   SyncTime                0
   SpaceTime               0
   Timeout                 100
-  Flags                   0
+  Flags                   0x0000
   Gap                     10000
-  #GUID                   f24fd96a-259a-4ab7-a8ec-e73a809185d8
+  #GUID                   "f24fd96a-259a-4ab7-a8ec-e73a809185d8"
   Item {
     Name                    "running_data"
     SlaveAdr                247
@@ -27,7 +27,7 @@ Modbus {
     SlaveAdr                247
     RegisterAdr             37002
     Type                    0x00000204
-    Count                   54
+    Count                   22
   }
   Item {
     Name                    "BMS_detailed"
@@ -147,5 +147,313 @@ Modbus {
     RegisterAdr             35162
     Type                    0x00080284
     Count                   1
+  }
+  Item {
+    Name                    "R_phase_load_power"
+    SlaveAdr                247
+    RegisterAdr             35164
+    Type                    0x00080284
+    Count                   1
+  }
+  Item {
+    Name                    "S_phase_load_power"
+    SlaveAdr                247
+    RegisterAdr             35166
+    Type                    0x00080284
+    Count                   1
+  }
+  Item {
+    Name                    "T_phase_load_power"
+    SlaveAdr                247
+    RegisterAdr             35168
+    Type                    0x00080284
+    Count                   1
+  }
+  Item {
+    Name                    "total_backup_load_power"
+    SlaveAdr                247
+    RegisterAdr             35170
+    Type                    0x00080284
+    Count                   1
+  }
+  Item {
+    Name                    "total_load_power"
+    SlaveAdr                247
+    RegisterAdr             35172
+    Type                    0x00080284
+    Count                   1
+  }
+  Item {
+    Name                    "UPS_load_percent"
+    SlaveAdr                247
+    RegisterAdr             35173
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "temperature"
+    SlaveAdr                247
+    RegisterAdr             35174
+    Type                    0x00080284
+    Count                   3
+  }
+  Item {
+    Name                    "function_bit_value"
+    SlaveAdr                247
+    RegisterAdr             35177
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "bus_voltage"
+    SlaveAdr                247
+    RegisterAdr             35178
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "nbus_voltage"
+    SlaveAdr                247
+    RegisterAdr             35179
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "battery_VIP"
+    SlaveAdr                247
+    RegisterAdr             35180
+    Type                    0x00080204
+    Count                   4
+  }
+  Item {
+    Name                    "battery_mode"
+    SlaveAdr                247
+    RegisterAdr             35184
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "warning_code"
+    SlaveAdr                247
+    RegisterAdr             35185
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "work_mode"
+    SlaveAdr                247
+    RegisterAdr             35187
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "operation_mode"
+    SlaveAdr                247
+    RegisterAdr             35188
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "error_message"
+    SlaveAdr                247
+    RegisterAdr             35189
+    Type                    0x00080224
+    Count                   2
+  }
+  Item {
+    Name                    "total_PV_feed"
+    SlaveAdr                247
+    RegisterAdr             35191
+    Type                    0x00080224
+    Count                   8
+  }
+  Item {
+    Name                    "E_sell_day"
+    SlaveAdr                247
+    RegisterAdr             35199
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "E_buy_total"
+    SlaveAdr                247
+    RegisterAdr             35200
+    Type                    0x00080224
+    Count                   2
+  }
+  Item {
+    Name                    "E_buy_day"
+    SlaveAdr                247
+    RegisterAdr             35202
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "E_load_total"
+    SlaveAdr                247
+    RegisterAdr             35203
+    Type                    0x00080224
+    Count                   2
+  }
+  Item {
+    Name                    "E_load_day"
+    SlaveAdr                247
+    RegisterAdr             35205
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "E_battery_charge_total"
+    SlaveAdr                247
+    RegisterAdr             35206
+    Type                    0x00080224
+    Count                   2
+  }
+  Item {
+    Name                    "E_battery_charge_day"
+    SlaveAdr                247
+    RegisterAdr             35208
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "E_battery_discharge_total"
+    SlaveAdr                247
+    RegisterAdr             35209
+    Type                    0x00080224
+    Count                   2
+  }
+  Item {
+    Name                    "E_battery_discharge_day"
+    SlaveAdr                247
+    RegisterAdr             35211
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "b_meter_connect_status"
+    SlaveAdr                247
+    RegisterAdr             36003
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "meter_communicate_status"
+    SlaveAdr                247
+    RegisterAdr             36004
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "meter_active_power"
+    SlaveAdr                247
+    RegisterAdr             36005
+    Type                    0x00080284
+    Count                   4
+  }
+  Item {
+    Name                    "meter_total_reactive_power"
+    SlaveAdr                247
+    RegisterAdr             36009
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "meter_power_factor"
+    SlaveAdr                247
+    RegisterAdr             36010
+    Type                    0x00080204
+    Count                   4
+  }
+  Item {
+    Name                    "meter_frequence"
+    SlaveAdr                247
+    RegisterAdr             36014
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "mete_E_total_sell"
+    SlaveAdr                247
+    RegisterAdr             36015
+    Type                    0x00080244
+    Count                   2
+  }
+  Item {
+    Name                    "mete_E_total_buy"
+    SlaveAdr                247
+    RegisterAdr             36017
+    Type                    0x00080244
+    Count                   2
+  }
+  Item {
+    Name                    "meter_power"
+    SlaveAdr                247
+    RegisterAdr             36019
+    Type                    0x00080224
+    Count                   24
+  }
+  Item {
+    Name                    "BMS_status_1"
+    SlaveAdr                247
+    RegisterAdr             37002
+    Type                    0x00080204
+    Count                   16
+  }
+  Item {
+    Name                    "BMS_status_2"
+    SlaveAdr                247
+    RegisterAdr             37018
+    Type                    0x00080204
+    Count                   6
+  }
+  Item {
+    Name                    "BMS_flag"
+    SlaveAdr                247
+    RegisterAdr             37100
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "BMS_work_mode"
+    SlaveAdr                247
+    RegisterAdr             37101
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "BMS_allow_charge_power"
+    SlaveAdr                247
+    RegisterAdr             37102
+    Type                    0x00080224
+    Count                   2
+  }
+  Item {
+    Name                    "BMS_allow_discharge_power"
+    SlaveAdr                247
+    RegisterAdr             37104
+    Type                    0x00080224
+    Count                   2
+  }
+  Item {
+    Name                    "BMS_detail_information"
+    SlaveAdr                247
+    RegisterAdr             37106
+    Type                    0x00080204
+    Count                   14
+  }
+  Item {
+    Name                    "BMS_battery1_SOC"
+    SlaveAdr                247
+    RegisterAdr             37127
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "BMS_battery1_SN"
+    SlaveAdr                247
+    RegisterAdr             37135
+    Type                    0x00080224
+    Count                   2
   }
 }

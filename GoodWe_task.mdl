@@ -1,7 +1,7 @@
 Model {
   Name                    "GoodWe_task"
   Version                 3.00
-  #RexVersion             "2.52.0 rev. 14865, Date 2023-01-04"
+  #RexVersion             "2.52.0 rev. 15314, Date 2023-05-10"
   ShowPortLabels          on
   SavedCharacterEncoding  "UTF-8"
   MaskType                "REX sequence"
@@ -42,16 +42,156 @@ Model {
     Name                    "GoodWe_task"
     Location                [280, 36, 1347, 873]
     SigNames                ""
-    #GUID                   55e50adb-48b8-42ff-a0e8-0bf151040f8b
+    #GUID                   "55e50adb-48b8-42ff-a0e8-0bf151040f8b"
+    Block {
+      BlockType               From
+      Name                    "From"
+      Position                [20, 243, 120, 257]
+      ShowName                off
+      GotoTag                 "MBM__PV_mode"
+      FontSize                10
+      #GUID                   "d24e047c-f046-4d53-9c28-4570648d267a"
+    }
+    Block {
+      BlockType               From
+      Name                    "From1"
+      Position                [15, 478, 115, 492]
+      ShowName                off
+      GotoTag                 "MBM__grid_mode"
+      FontSize                10
+      #GUID                   "2fe449f4-8234-4cf0-854d-004ed5da5588"
+    }
+    Block {
+      BlockType               From
+      Name                    "From2"
+      Position                [15, 508, 115, 522]
+      ShowName                off
+      GotoTag                 "MBM__total_inv_power"
+      FontSize                10
+      #GUID                   "3c927b01-614a-4bd2-8896-d40cade38763"
+    }
+    Block {
+      BlockType               From
+      Name                    "From3"
+      Position                [250, 703, 445, 717]
+      ShowName                off
+      GotoTag                 "MBM__backup_S_phase_load_power"
+      FontSize                10
+      #GUID                   "c7143636-4977-49ea-9d2c-67c810b997d4"
+    }
+    Block {
+      BlockType               From
+      Name                    "From4"
+      Position                [15, 538, 115, 552]
+      ShowName                off
+      GotoTag                 "MBM__AC_active_power"
+      FontSize                10
+      #GUID                   "7575045c-3a8f-470d-83cf-8717b65af34d"
+    }
+    Block {
+      BlockType               From
+      Name                    "From5"
+      Position                [15, 563, 160, 577]
+      ShowName                off
+      GotoTag                 "MBM__AC_reactive_power"
+      FontSize                10
+      #GUID                   "780efb9b-d2a7-4cb0-b0a9-e190510f1acc"
+    }
+    Block {
+      BlockType               From
+      Name                    "From6"
+      Position                [15, 588, 160, 602]
+      ShowName                off
+      GotoTag                 "MBM__AC_apparent_power"
+      FontSize                10
+      #GUID                   "04e785dc-6f55-4957-aa7e-71fa38421ec3"
+    }
+    Block {
+      BlockType               From
+      Name                    "From7"
+      Position                [10, 703, 205, 717]
+      ShowName                off
+      GotoTag                 "MBM__backup_R_phase_load_power"
+      FontSize                10
+      #GUID                   "af5beca7-81f5-4a7e-af6f-bc398d6abc2d"
+    }
+    Block {
+      BlockType               From
+      Name                    "From8"
+      Position                [480, 703, 675, 717]
+      ShowName                off
+      GotoTag                 "MBM__backup_T_phase_load_power"
+      FontSize                10
+      #GUID                   "a8302b96-2cfa-41f1-8f6c-d7fe3b117ac6"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MBM__PV1"
+      Ports                   [0, 4, 0, 0, 0]
+      Position                [30, 102, 60, 148]
+      SourceBlock             "inoutlib/INQUAD"
+      FontSize                10
+      #GUID                   "e04e2247-6451-4afd-85d2-350a08728a77"
+      #SignalWatchMask        "0f"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MBM__PV2"
+      Ports                   [0, 4, 0, 0, 0]
+      Position                [30, 172, 60, 218]
+      SourceBlock             "inoutlib/INQUAD"
+      FontSize                10
+      #GUID                   "844e80dc-1286-4c18-9a76-8973653795d8"
+      #SignalWatchMask        "0f"
+    }
     Block {
       BlockType               Reference
       Name                    "MBM__RTC"
       Ports                   [0, 4, 0, 0, 0]
-      Position                [55, 92, 85, 138]
+      Position                [30, 22, 60, 68]
       SourceBlock             "inoutlib/INQUAD"
       FontSize                10
-      #GUID                   e6d32c6d-1b52-4dcf-8879-607433ef7e09
-      #SignalWatchMask        0f
+      #GUID                   "e6d32c6d-1b52-4dcf-8879-607433ef7e09"
+      #SignalWatchMask        "0f"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MBM__backup_R_phase_load"
+      Ports                   [0, 4, 0, 0, 0]
+      Position                [70, 627, 100, 673]
+      SourceBlock             "inoutlib/INQUAD"
+      FontSize                10
+      #GUID                   "acce0fbb-8866-401b-93fc-ff5dd5014124"
+      #SignalWatchMask        "0f"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MBM__backup_S_phase_load"
+      Ports                   [0, 4, 0, 0, 0]
+      Position                [310, 627, 340, 673]
+      SourceBlock             "inoutlib/INQUAD"
+      FontSize                10
+      #GUID                   "a857f807-4fd8-4db0-9b35-26b55ea88387"
+      #SignalWatchMask        "0f"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MBM__backup_T_phase_load"
+      Ports                   [0, 4, 0, 0, 0]
+      Position                [540, 627, 570, 673]
+      SourceBlock             "inoutlib/INQUAD"
+      FontSize                10
+      #GUID                   "94988d0e-0da5-491a-80a2-e88e39561257"
+      #SignalWatchMask        "0f"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MBM__grid_phases"
+      Ports                   [0, 16, 0, 0, 0]
+      Position                [50, 281, 80, 449]
+      SourceBlock             "inoutlib/INHEXD"
+      FontSize                10
+      #GUID                   "b96b263d-ab1b-4d88-b60d-20e455ae8245"
     }
   }
 }
