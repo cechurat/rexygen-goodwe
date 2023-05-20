@@ -30,6 +30,13 @@ Modbus {
     Count                   22
   }
   Item {
+    Name                    "BMS_detailed"
+    SlaveAdr                247
+    RegisterAdr             37100
+    Type                    0x00000204
+    Count                   50
+  }
+  Item {
     Name                    "RTC"
     SlaveAdr                247
     RegisterAdr             35100
@@ -399,5 +406,54 @@ Modbus {
     RegisterAdr             37018
     Type                    0x00080204
     Count                   6
+  }
+  Item {
+    Name                    "BMS_flag"
+    SlaveAdr                247
+    RegisterAdr             37100
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "BMS_work_mode"
+    SlaveAdr                247
+    RegisterAdr             37101
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "BMS_allow_charge_power"
+    SlaveAdr                247
+    RegisterAdr             37102
+    Type                    0x00080224
+    Count                   2
+  }
+  Item {
+    Name                    "BMS_allow_discharge_power"
+    SlaveAdr                247
+    RegisterAdr             37104
+    Type                    0x00080224
+    Count                   2
+  }
+  Item {
+    Name                    "BMS_detail_information"
+    SlaveAdr                247
+    RegisterAdr             37106
+    Type                    0x00080204
+    Count                   14
+  }
+  Item {
+    Name                    "BMS_battery1_SOC"
+    SlaveAdr                247
+    RegisterAdr             37127
+    Type                    0x00080204
+    Count                   1
+  }
+  Item {
+    Name                    "BMS_battery1_SN"
+    SlaveAdr                247
+    RegisterAdr             37135
+    Type                    0x00080224
+    Count                   2
   }
 }

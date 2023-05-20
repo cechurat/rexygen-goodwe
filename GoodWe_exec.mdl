@@ -1,7 +1,7 @@
 Model {
   Name                    "GoodWe_exec"
   Version                 3.00
-  #RexVersion             "2.52.0 rev. 14865, Date 2023-01-04"
+  #RexVersion             "2.52.0 rev. 15123, Date 2023-03-29"
   ShowPortLabels          on
   SavedCharacterEncoding  "UTF-8"
   MaskType                "REX sequence"
@@ -42,7 +42,7 @@ Model {
     Name                    "GoodWe_exec"
     Location                [11, 35, 260, 449]
     __ProjectState          "{\"runtime_mode\":0,\"simstepsinput_ticks\":1000,\"simstepsinput_time\":\"00:00:00.000\",\"simstepsinput_unit\":0,\"tabs\":{\"windows\":[{\"id\":\"tabs11\",\"tabs\":[{\"class\":\"mdl\",\"id\":\"GoodWe_exec.mdl\"},{\"class\":\"mdl\",\"id\":\"GoodWe_task.mdl\"}]}]},\"watch_panel\":{\"signals\":[]}}"
-    #GUID                   764087fb-0120-425a-b6c4-f0ad598d1aba
+    #GUID                   "764087fb-0120-425a-b6c4-f0ad598d1aba"
     Block {
       BlockType               Reference
       Name                    "EXEC"
@@ -64,7 +64,7 @@ Model {
       cpu1                    -1
       cpu2                    -1
       cpu3                    -1
-      #GUID                   de17c7ee-dee3-4f61-8c92-00f8c48d94fd
+      #GUID                   "de17c7ee-dee3-4f61-8c92-00f8c48d94fd"
     }
     Block {
       BlockType               Reference
@@ -80,7 +80,7 @@ Model {
       MDLOPEN                 on
       FontSize                10
       #RTFlags                5
-      #GUID                   d3816513-7d3d-4914-9ea4-6b2fe6fcae06
+      #GUID                   "d3816513-7d3d-4914-9ea4-6b2fe6fcae06"
     }
     Block {
       BlockType               Reference
@@ -96,7 +96,7 @@ Model {
       RedirectToHMI           on
       Compression             off
       FontSize                10
-      #GUID                   8499fda3-216f-46d4-81bc-66e79ca792d8
+      #GUID                   "8499fda3-216f-46d4-81bc-66e79ca792d8"
     }
     Block {
       BlockType               Reference
@@ -109,7 +109,7 @@ Model {
       Description             "REXYGEN driver for GoodWe Inverters ET series"
       Customer                ""
       FontSize                10
-      #GUID                   9e57a0b9-2ba4-4dcf-9b83-ddcc9e0aec8c
+      #GUID                   "9e57a0b9-2ba4-4dcf-9b83-ddcc9e0aec8c"
     }
     Block {
       BlockType               Reference
@@ -120,13 +120,13 @@ Model {
       module                  "MbDrv"
       classname               "MbmDrv"
       cfgname                 "GoodWe_RTU_cfg.rio"
-      factor                  2
+      factor                  100
       stack                   10240
       pri                     3
       timer                   off
       FontSize                10
       cpu                     -1
-      #GUID                   d7518740-c58e-4ee4-bd61-c4960d1b7365
+      #GUID                   "d7518740-c58e-4ee4-bd61-c4960d1b7365"
     }
     Block {
       BlockType               Reference
@@ -144,7 +144,7 @@ Model {
       cpu                     -1
       #RTFlags                5
       FontSize                10
-      #GUID                   381e3fd3-c547-4098-8693-ba9b2f153906
+      #GUID                   "381e3fd3-c547-4098-8693-ba9b2f153906"
     }
     Block {
       BlockType               Reference
@@ -159,28 +159,28 @@ Model {
       FontSize                10
       PreBuild                ""
       PostBuild               ""
-      #GUID                   9444c809-f3f5-45a7-b497-008d35ed24a7
+      #GUID                   "9444c809-f3f5-45a7-b497-008d35ed24a7"
     }
     Line {
       SrcBlock                "EXEC"
       SrcPort                 2
       DstBlock                "MNR"
       DstPort                 1
-      #GUID                   ac774c94-3a9c-4354-8820-df0d20a37059
+      #GUID                   "ac774c94-3a9c-4354-8820-df0d20a37059"
     }
     Line {
       SrcBlock                "EXEC"
       SrcPort                 5
       DstBlock                "GoodWe_task"
       DstPort                 1
-      #GUID                   19318977-d14e-4bd5-a623-25d2d3fdd4ba
+      #GUID                   "19318977-d14e-4bd5-a623-25d2d3fdd4ba"
     }
     Line {
       SrcBlock                "MNR"
       SrcPort                 1
       DstBlock                "MBM"
       DstPort                 1
-      #GUID                   566db493-82ae-4045-ba81-5cb2eb4a92a3
+      #GUID                   "566db493-82ae-4045-ba81-5cb2eb4a92a3"
     }
     Annotation {
       Position                [15, 10]
@@ -194,7 +194,7 @@ Model {
       Autosize                on
       Width                   150
       Height                  150
-      #GUID                   9b57d252-1a29-4676-a03d-eee70c278a28
+      #GUID                   "9b57d252-1a29-4676-a03d-eee70c278a28"
     }
   }
 }
