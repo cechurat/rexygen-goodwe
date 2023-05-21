@@ -1,7 +1,7 @@
 Model {
   Name                    "GoodWe_task"
   Version                 3.00
-  #RexVersion             "2.52.0 rev. 15314, Date 2023-05-10"
+  #RexVersion             "2.52.0 rev. 15123, Date 2023-03-29"
   ShowPortLabels          on
   SavedCharacterEncoding  "UTF-8"
   MaskType                "REX sequence"
@@ -44,85 +44,175 @@ Model {
     SigNames                ""
     #GUID                   "55e50adb-48b8-42ff-a0e8-0bf151040f8b"
     Block {
-      BlockType               From
-      Name                    "From"
-      Position                [20, 243, 120, 257]
+      BlockType               Reference
+      Name                    "CNB"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [160, 83, 180, 97]
+      SourceBlock             "mathlib/CNB"
+      YCN                     on
+      #GUID                   "92c80d6e-829f-4f07-bf4a-67a60c039028"
+    }
+    Block {
+      BlockType               Display
+      Name                    "Display10"
+      Position                [430, 448, 510, 472]
+      Format                  "Best fit"
       ShowName                off
-      GotoTag                 "MBM__PV_mode"
-      FontSize                10
-      #GUID                   "d24e047c-f046-4d53-9c28-4570648d267a"
+      Decimation              1
+      Suffix                  ""
+      DispValue               ""
+      #GUID                   "7de3e32b-ffa1-444f-ae74-e7c836a19a91"
+    }
+    Block {
+      BlockType               Display
+      Name                    "Display11"
+      Position                [245, 528, 325, 552]
+      Format                  "Best fit"
+      ShowName                off
+      Decimation              1
+      Suffix                  ""
+      DispValue               ""
+      #GUID                   "f8d9f581-9850-4cbc-808e-8c779ddc84e0"
+    }
+    Block {
+      BlockType               Display
+      Name                    "Display12"
+      Position                [245, 558, 325, 582]
+      Format                  "Best fit"
+      ShowName                off
+      Decimation              1
+      Suffix                  ""
+      DispValue               ""
+      #GUID                   "56e4f40a-fa76-424b-baca-dc6afbca9f3a"
+    }
+    Block {
+      BlockType               Display
+      Name                    "Display13"
+      Position                [245, 593, 325, 617]
+      Format                  "Best fit"
+      ShowName                off
+      Decimation              1
+      Suffix                  ""
+      DispValue               ""
+      #GUID                   "2d2895b6-10d5-4341-bbfc-2dc88ce010da"
+    }
+    Block {
+      BlockType               Display
+      Name                    "Display14"
+      Position                [245, 623, 325, 647]
+      Format                  "Best fit"
+      ShowName                off
+      Decimation              1
+      Suffix                  ""
+      DispValue               ""
+      #GUID                   "92980fd5-d9e9-4bd2-8d8b-83da207db0b4"
+    }
+    Block {
+      BlockType               Display
+      Name                    "Display6"
+      Position                [430, 328, 510, 352]
+      Format                  "Best fit"
+      ShowName                off
+      Decimation              1
+      Suffix                  ""
+      DispValue               ""
+      #GUID                   "8c904b3a-8a03-4d19-af93-4bcd093cb1b9"
+    }
+    Block {
+      BlockType               Display
+      Name                    "Display7"
+      Position                [430, 358, 510, 382]
+      Format                  "Best fit"
+      ShowName                off
+      Decimation              1
+      Suffix                  ""
+      DispValue               ""
+      #GUID                   "096dc099-52ce-4e87-a653-c47294ec56a3"
+    }
+    Block {
+      BlockType               Display
+      Name                    "Display8"
+      Position                [430, 388, 510, 412]
+      Format                  "Best fit"
+      ShowName                off
+      Decimation              1
+      Suffix                  ""
+      DispValue               ""
+      #GUID                   "8775508e-6249-4c63-afd6-e6c2c7233abd"
+    }
+    Block {
+      BlockType               Display
+      Name                    "Display9"
+      Position                [430, 418, 510, 442]
+      Format                  "Best fit"
+      ShowName                off
+      Decimation              1
+      Suffix                  ""
+      DispValue               ""
+      #GUID                   "6d0778a2-dbe6-4baa-8048-6575ccd4888e"
     }
     Block {
       BlockType               From
       Name                    "From1"
-      Position                [15, 478, 115, 492]
+      Position                [50, 393, 185, 407]
       ShowName                off
-      GotoTag                 "MBM__grid_mode"
-      FontSize                10
-      #GUID                   "2fe449f4-8234-4cf0-854d-004ed5da5588"
+      GotoTag                 "MNR__SDCR0x011"
+      BackgroundColor         "yellow"
+      #GUID                   "c7f1c0be-aab5-4a02-aa2a-a3cc386fe215"
+    }
+    Block {
+      BlockType               From
+      Name                    "From12"
+      Position                [50, 343, 185, 357]
+      ShowName                off
+      GotoTag                 "MNR__SDCR0x010"
+      BackgroundColor         "yellow"
+      #GUID                   "da09f928-1ac5-49a8-b9d4-22488e28dbdc"
+    }
+    Block {
+      BlockType               From
+      Name                    "From13"
+      Position                [50, 628, 185, 642]
+      ShowName                off
+      GotoTag                 "MNR__SDCR0x019"
+      BackgroundColor         "yellow"
+      #GUID                   "53a32d5e-7ae4-4183-a6c1-d494c8818389"
     }
     Block {
       BlockType               From
       Name                    "From2"
-      Position                [15, 508, 115, 522]
+      Position                [50, 443, 185, 457]
       ShowName                off
-      GotoTag                 "MBM__total_inv_power"
-      FontSize                10
-      #GUID                   "3c927b01-614a-4bd2-8896-d40cade38763"
+      GotoTag                 "MNR__SDCR0x012"
+      BackgroundColor         "yellow"
+      #GUID                   "331b169f-58c5-40e0-88cc-6fb841d3999a"
     }
     Block {
       BlockType               From
       Name                    "From3"
-      Position                [250, 703, 445, 717]
+      Position                [50, 533, 185, 547]
       ShowName                off
-      GotoTag                 "MBM__backup_S_phase_load_power"
-      FontSize                10
-      #GUID                   "c7143636-4977-49ea-9d2c-67c810b997d4"
+      GotoTag                 "MNR__SDCR0x014"
+      BackgroundColor         "yellow"
+      #GUID                   "dce67df5-2421-41e3-9d29-fe62068afd9b"
     }
     Block {
       BlockType               From
       Name                    "From4"
-      Position                [15, 538, 115, 552]
+      Position                [50, 563, 185, 577]
       ShowName                off
-      GotoTag                 "MBM__AC_active_power"
-      FontSize                10
-      #GUID                   "7575045c-3a8f-470d-83cf-8717b65af34d"
+      GotoTag                 "MNR__SDCR0x015"
+      BackgroundColor         "yellow"
+      #GUID                   "01a3aab8-7452-4669-b5c8-b07f185ec06d"
     }
     Block {
       BlockType               From
       Name                    "From5"
-      Position                [15, 563, 160, 577]
+      Position                [50, 598, 185, 612]
       ShowName                off
-      GotoTag                 "MBM__AC_reactive_power"
-      FontSize                10
-      #GUID                   "780efb9b-d2a7-4cb0-b0a9-e190510f1acc"
-    }
-    Block {
-      BlockType               From
-      Name                    "From6"
-      Position                [15, 588, 160, 602]
-      ShowName                off
-      GotoTag                 "MBM__AC_apparent_power"
-      FontSize                10
-      #GUID                   "04e785dc-6f55-4957-aa7e-71fa38421ec3"
-    }
-    Block {
-      BlockType               From
-      Name                    "From7"
-      Position                [10, 703, 205, 717]
-      ShowName                off
-      GotoTag                 "MBM__backup_R_phase_load_power"
-      FontSize                10
-      #GUID                   "af5beca7-81f5-4a7e-af6f-bc398d6abc2d"
-    }
-    Block {
-      BlockType               From
-      Name                    "From8"
-      Position                [480, 703, 675, 717]
-      ShowName                off
-      GotoTag                 "MBM__backup_T_phase_load_power"
-      FontSize                10
-      #GUID                   "a8302b96-2cfa-41f1-8f6c-d7fe3b117ac6"
+      GotoTag                 "MNR__SDCR0x018"
+      BackgroundColor         "yellow"
+      #GUID                   "2291e0cf-5aa8-453b-bd4b-7c41fc3dd4ad"
     }
     Block {
       BlockType               Reference
@@ -155,43 +245,642 @@ Model {
       #SignalWatchMask        "0f"
     }
     Block {
-      BlockType               Reference
-      Name                    "MBM__backup_R_phase_load"
-      Ports                   [0, 4, 0, 0, 0]
-      Position                [70, 627, 100, 673]
-      SourceBlock             "inoutlib/INQUAD"
-      FontSize                10
-      #GUID                   "acce0fbb-8866-401b-93fc-ff5dd5014124"
-      #SignalWatchMask        "0f"
+      BlockType               SubSystem
+      Name                    "RS485_diagnostics"
+      Ports                   [3, 5, 0, 0, 0]
+      Position                [225, 324, 380, 476]
+      ShowPortLabels          on
+      MaskType                "REX sequence"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      #GUID                   "42598448-bb9d-4cd3-bb79-d2a4262f57a2"
+      System {
+        Name                    "RS485_diagnostics"
+        Location                [85, 107, 629, 776]
+        #GUID                   "42598448-bb9d-4cd3-bb79-d2a4262f57a2"
+        Block {
+          BlockType               Inport
+          Name                    "reg0x010"
+          Position                [30, 98, 60, 112]
+          Port                    1
+          BackgroundColor         "green"
+          #GUID                   "43824562-923b-446d-a35a-00d41b007cd1"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "reg0x011"
+          Position                [30, 253, 60, 267]
+          Port                    2
+          BackgroundColor         "green"
+          #GUID                   "6f696fd9-432d-4482-bcc6-03dee49c1af5"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "reg0x012"
+          Position                [35, 598, 65, 612]
+          Port                    3
+          BackgroundColor         "green"
+          #GUID                   "8f3fde0b-0735-4c87-b7e3-3e50d02bdde0"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNI"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [195, 313, 215, 327]
+          SourceBlock             "mathlib/CNI"
+          icn                     5
+          vtype                   "4: Long (I32)"
+          #GUID                   "6e0e0bf8-2501-4a48-83d6-ceb314236e91"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNI1"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [230, 328, 250, 342]
+          SourceBlock             "mathlib/CNI"
+          icn                     6
+          vtype                   "4: Long (I32)"
+          #GUID                   "4041058f-eeaa-4931-ad4d-41b86ec98dee"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNI2"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [195, 348, 215, 362]
+          SourceBlock             "mathlib/CNI"
+          icn                     7
+          vtype                   "4: Long (I32)"
+          #GUID                   "cfcdde5e-ce6a-4105-ac64-1a92f969dbd2"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNI3"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [230, 363, 250, 377]
+          SourceBlock             "mathlib/CNI"
+          icn                     8
+          vtype                   "4: Long (I32)"
+          #GUID                   "13eaab88-950e-42b6-bc4f-43b583ba89a8"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNR"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [195, 428, 215, 442]
+          SourceBlock             "mathlib/CNR"
+          ycn                     "0.5"
+          #GUID                   "6ec004c9-1b3f-4513-b023-b197ca7db29e"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNR1"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [230, 443, 250, 457]
+          SourceBlock             "mathlib/CNR"
+          ycn                     "1.0"
+          #GUID                   "1e546391-8be2-46b0-9772-fcc31e99c8e1"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNR2"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [195, 463, 215, 477]
+          SourceBlock             "mathlib/CNR"
+          ycn                     "1.5"
+          #GUID                   "aaf1eec9-1a0f-4601-be58-4d7ec0b51a1c"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNR3"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [230, 483, 250, 497]
+          SourceBlock             "mathlib/CNR"
+          ycn                     "2.0"
+          #GUID                   "bb5b2571-449c-4a4e-bb0c-18a5b6a5a197"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNS"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [145, 174, 200, 186]
+          SourceBlock             "stringlib/CNS"
+          scv                     "0: none"
+          nmax                    0
+          #GUID                   "9002e722-6e04-41dc-9531-5e1f91931684"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNS1"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [210, 184, 265, 196]
+          SourceBlock             "stringlib/CNS"
+          scv                     "1: even"
+          nmax                    0
+          #GUID                   "85ec8c91-aec4-4293-af33-dc35e3b685a6"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNS2"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [145, 204, 200, 216]
+          SourceBlock             "stringlib/CNS"
+          scv                     "2: odd"
+          nmax                    0
+          #GUID                   "20625ca3-f8f3-47fd-8479-f33ea59c135b"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "GAIN"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [145, 98, 170, 112]
+          SourceBlock             "mathlib/GAIN"
+          k                       100
+          #GUID                   "8a55f8e8-c488-4aca-87de-64cb6ca2a9cd"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "GAIN1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [150, 598, 175, 612]
+          SourceBlock             "mathlib/GAIN"
+          k                       100
+          #GUID                   "4d90b9b2-91f6-479a-bf5e-5e38a2eb2b8b"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "INTSM"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [175, 253, 200, 267]
+          SourceBlock             "logiclib/INTSM"
+          shift                   0
+          mask                    "0x07"
+          vtype                   "10: Large (I64)"
+          #GUID                   "9655fde9-2b5f-415d-883a-ad3cc1b39d38"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "INTSM1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [175, 383, 200, 397]
+          SourceBlock             "logiclib/INTSM"
+          shift                   3
+          mask                    "0x03"
+          vtype                   "10: Large (I64)"
+          #GUID                   "e148426b-54e4-4c40-ad1c-602ded21f36e"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "INTSM2"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [175, 508, 200, 522]
+          SourceBlock             "logiclib/INTSM"
+          shift                   5
+          mask                    "0x03"
+          vtype                   "10: Large (I64)"
+          #GUID                   "b86e344d-0d3a-4c62-a6ed-a128d79357a8"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "RTOI"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [200, 98, 225, 112]
+          SourceBlock             "mathlib/RTOI"
+          vtype                   "4: Long (I32)"
+          SAT                     on
+          #GUID                   "e7ffc620-115a-43e0-8888-e1aa7f8d5ec9"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "RTOI1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [205, 598, 230, 612]
+          SourceBlock             "mathlib/RTOI"
+          vtype                   "4: Long (I32)"
+          SAT                     on
+          #GUID                   "b6044dee-252d-4024-baf8-7e5ab438a8d3"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SELQUAD"
+          Ports                   [7, 1, 0, 0, 0]
+          Position                [315, 342, 350, 418]
+          SourceBlock             "analoglib/SELQUAD"
+          BINF                    off
+          #GUID                   "ff1881ab-cfc3-4eb0-b89f-fbdf152d9860"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SELQUAD1"
+          Ports                   [7, 1, 0, 0, 0]
+          Position                [315, 467, 350, 543]
+          SourceBlock             "analoglib/SELQUAD"
+          BINF                    off
+          #GUID                   "50788303-389d-4bdb-bdac-b7ad30044f72"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SELSOCT"
+          Ports                   [12, 1, 0, 0, 0]
+          Position                [315, 170, 355, 300]
+          SourceBlock             "stringlib/SELSOCT"
+          BINF                    off
+          nmax                    0
+          #GUID                   "9dfe56b1-ed89-49ee-aa36-b16c1d3f18da"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "RS485_baudrate"
+          Position                [440, 98, 470, 112]
+          Port                    1
+          BackgroundColor         "green"
+          #GUID                   "15354907-4854-4104-aa96-6acb4fed8b3b"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "RS485_parity"
+          Position                [440, 228, 470, 242]
+          Port                    2
+          BackgroundColor         "green"
+          #GUID                   "d1efcdbc-c4ab-444e-8e37-824ddf889753"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "RS485_databits"
+          Position                [440, 373, 470, 387]
+          Port                    3
+          BackgroundColor         "green"
+          #GUID                   "690d644a-f604-4953-9a5f-c898e0b57dc0"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "RS485_stopbits"
+          Position                [440, 498, 470, 512]
+          Port                    4
+          BackgroundColor         "green"
+          #GUID                   "726fa8b8-a920-45c3-9d8f-a02b45e7f22b"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "UART_baudrate"
+          Position                [440, 598, 470, 612]
+          Port                    5
+          BackgroundColor         "green"
+          #GUID                   "75dc427c-79a1-4861-ae42-e2c310ff0dc2"
+        }
+        Line {
+          SrcBlock                "CNI"
+          SrcPort                 1
+          Points                  [75, 0; 0, 30]
+          DstBlock                "SELQUAD"
+          DstPort                 1
+          #GUID                   "2270c1dc-a04a-45d4-a4c8-f59fcca33ce5"
+        }
+        Line {
+          SrcBlock                "CNI1"
+          SrcPort                 1
+          Points                  [30, 0; 0, 25]
+          DstBlock                "SELQUAD"
+          DstPort                 2
+          #GUID                   "9d94cb9b-f295-4124-ada8-1991c8165ca0"
+        }
+        Line {
+          SrcBlock                "CNI2"
+          SrcPort                 1
+          Points                  [55, 0; 0, 15]
+          DstBlock                "SELQUAD"
+          DstPort                 3
+          #GUID                   "262194c3-ecd7-4fc5-aa15-36fe9c08aec6"
+        }
+        Line {
+          SrcBlock                "CNI3"
+          SrcPort                 1
+          Points                  [10, 0; 0, 10]
+          DstBlock                "SELQUAD"
+          DstPort                 4
+          #GUID                   "7d1bd08d-4150-4f28-8cc8-f9131af9e7ad"
+        }
+        Line {
+          SrcBlock                "CNR"
+          SrcPort                 1
+          Points                  [75, 0; 0, 40]
+          DstBlock                "SELQUAD1"
+          DstPort                 1
+          #GUID                   "e8d4ce72-1064-464c-95ed-da15decfce72"
+        }
+        Line {
+          SrcBlock                "CNR1"
+          SrcPort                 1
+          Points                  [30, 0; 0, 35]
+          DstBlock                "SELQUAD1"
+          DstPort                 2
+          #GUID                   "1eb0743d-5032-4ebe-affb-928fd6f4283c"
+        }
+        Line {
+          SrcBlock                "CNR2"
+          SrcPort                 1
+          Points                  [55, 0; 0, 25]
+          DstBlock                "SELQUAD1"
+          DstPort                 3
+          #GUID                   "6970ea6a-5546-4e41-96bf-d5e7b7ad8edb"
+        }
+        Line {
+          SrcBlock                "CNR3"
+          SrcPort                 1
+          Points                  [10, 0; 0, 15]
+          DstBlock                "SELQUAD1"
+          DstPort                 4
+          #GUID                   "30ae20f4-18dd-46c7-995f-d7005565e225"
+        }
+        Line {
+          SrcBlock                "CNS"
+          SrcPort                 1
+          DstBlock                "SELSOCT"
+          DstPort                 1
+          #GUID                   "6199c8e5-0dcb-4725-bc7b-a682b04b1509"
+        }
+        Line {
+          SrcBlock                "CNS1"
+          SrcPort                 1
+          DstBlock                "SELSOCT"
+          DstPort                 2
+          #GUID                   "446e3e13-4cd7-415a-a4db-d95ba4eb305b"
+        }
+        Line {
+          SrcBlock                "CNS2"
+          SrcPort                 1
+          Points                  [95, 0]
+          DstBlock                "SELSOCT"
+          DstPort                 3
+          #GUID                   "97fdf9a3-bb41-4220-9426-e1d155168fca"
+        }
+        Line {
+          SrcBlock                "GAIN"
+          SrcPort                 1
+          DstBlock                "RTOI"
+          DstPort                 1
+          #GUID                   "47d33b25-fabf-4817-bbf0-c37b7dc8e3c9"
+        }
+        Line {
+          SrcBlock                "GAIN1"
+          SrcPort                 1
+          DstBlock                "RTOI1"
+          DstPort                 1
+          #GUID                   "c735e59c-50f5-40c4-aef5-dd3d7cd052d1"
+        }
+        Line {
+          SrcBlock                "INTSM"
+          SrcPort                 1
+          DstBlock                "SELSOCT"
+          DstPort                 9
+          #GUID                   "85f61fc2-7d50-44e5-aa13-67e748e62a7a"
+        }
+        Line {
+          SrcBlock                "INTSM1"
+          SrcPort                 1
+          DstBlock                "SELQUAD"
+          DstPort                 5
+          #GUID                   "a9768cde-b0d8-4db5-8d25-035e27f0640f"
+        }
+        Line {
+          SrcBlock                "INTSM2"
+          SrcPort                 1
+          DstBlock                "SELQUAD1"
+          DstPort                 5
+          #GUID                   "9d44a964-6e83-42b3-aacc-ec720c1c17f9"
+        }
+        Line {
+          SrcBlock                "RTOI"
+          SrcPort                 1
+          DstBlock                "RS485_baudrate"
+          DstPort                 1
+          #GUID                   "c08b2370-5c0c-4954-8484-aecc948bd481"
+        }
+        Line {
+          SrcBlock                "RTOI1"
+          SrcPort                 1
+          DstBlock                "UART_baudrate"
+          DstPort                 1
+          #GUID                   "7a54b24c-abbc-484e-9da6-ac1008c7d4ae"
+        }
+        Line {
+          SrcBlock                "SELQUAD"
+          SrcPort                 1
+          DstBlock                "RS485_databits"
+          DstPort                 1
+          #GUID                   "549bb35f-c579-4017-8d0b-2f1db8822218"
+        }
+        Line {
+          SrcBlock                "SELQUAD1"
+          SrcPort                 1
+          DstBlock                "RS485_stopbits"
+          DstPort                 1
+          #GUID                   "2e32c25a-dac1-4a1a-a41f-7fc8a976c8cc"
+        }
+        Line {
+          SrcBlock                "SELSOCT"
+          SrcPort                 1
+          DstBlock                "RS485_parity"
+          DstPort                 1
+          #GUID                   "ebac656e-617b-46d7-bcd4-b81f3da47f14"
+        }
+        Line {
+          SrcBlock                "reg0x010"
+          SrcPort                 1
+          DstBlock                "GAIN"
+          DstPort                 1
+          #GUID                   "2b1503cd-7e11-4dbe-a79b-4a3cbfbecd06"
+        }
+        Line {
+          SrcBlock                "reg0x011"
+          SrcPort                 1
+          Points                  [50, 0]
+          #GUID                   "de18fc12-4a26-412a-95e0-65462a603a90"
+          Branch {
+            DstBlock                "INTSM"
+            DstPort                 1
+            #GUID                   "ff50f5d9-77ce-4102-b7d8-68be61752b0e"
+          }
+          Branch {
+            Points                  [0, 130]
+            #GUID                   "56a366e2-6afd-4440-ae40-d80a68aae13f"
+            Branch {
+              DstBlock                "INTSM1"
+              DstPort                 1
+              #GUID                   "ec31ea39-e84a-4d85-88eb-d7c0d6f56b76"
+            }
+            Branch {
+              Points                  [0, 125]
+              DstBlock                "INTSM2"
+              DstPort                 1
+              #GUID                   "2b1e082b-0f39-44be-92ac-b623ac8ebaab"
+            }
+          }
+        }
+        Line {
+          SrcBlock                "reg0x012"
+          SrcPort                 1
+          DstBlock                "GAIN1"
+          DstPort                 1
+          #GUID                   "ba10b9e1-53b0-4c0c-a799-67dbc0a3970f"
+        }
+        Annotation {
+          Position                [220, 30]
+          Text                    "Parsing data of Monarco HAT RS-485 diagnostics"
+          FontWeight              "bold"
+          FontSize                12
+          #GUID                   "1b0ed07b-4b64-416f-8d01-e06c882c4b63"
+        }
+      }
     }
     Block {
       BlockType               Reference
-      Name                    "MBM__backup_S_phase_load"
-      Ports                   [0, 4, 0, 0, 0]
-      Position                [310, 627, 340, 673]
-      SourceBlock             "inoutlib/INQUAD"
-      FontSize                10
-      #GUID                   "a857f807-4fd8-4db0-9b35-26b55ea88387"
-      #SignalWatchMask        "0f"
+      Name                    "TRND"
+      Ports                   [6, 5, 0, 0, 0]
+      Position                [200, 38, 245, 112]
+      SourceBlock             "arclib/TRND"
+      n                       4
+      l                       1000
+      btype                   "8: Double (F64)"
+      ptype1                  "1: Store"
+      ptype2                  "1: Store"
+      ptype3                  "1: Store"
+      ptype4                  "1: Store"
+      pfac                    1
+      afac                    1
+      arc                     0
+      id                      0
+      Title                   "Trend Title"
+      timesrc                 "1: CORETIMER"
+      SigNames                ""
+      ViewConfig              ""
+      #GUID                   "3075b0c7-b0bd-408f-9264-2f652599b065"
     }
-    Block {
-      BlockType               Reference
-      Name                    "MBM__backup_T_phase_load"
-      Ports                   [0, 4, 0, 0, 0]
-      Position                [540, 627, 570, 673]
-      SourceBlock             "inoutlib/INQUAD"
-      FontSize                10
-      #GUID                   "94988d0e-0da5-491a-80a2-e88e39561257"
-      #SignalWatchMask        "0f"
+    Line {
+      SrcBlock                "CNB"
+      SrcPort                 1
+      DstBlock                "TRND"
+      DstPort                 5
+      #GUID                   "234e66fe-182f-4020-977b-c9a9ac83d7d3"
     }
-    Block {
-      BlockType               Reference
-      Name                    "MBM__grid_phases"
-      Ports                   [0, 16, 0, 0, 0]
-      Position                [50, 281, 80, 449]
-      SourceBlock             "inoutlib/INHEXD"
-      FontSize                10
-      #GUID                   "b96b263d-ab1b-4d88-b60d-20e455ae8245"
+    Line {
+      SrcBlock                "From1"
+      SrcPort                 1
+      DstBlock                "RS485_diagnostics"
+      DstPort                 2
+      #GUID                   "e0723349-3808-4acd-a575-f10a94fbb01e"
+    }
+    Line {
+      SrcBlock                "From12"
+      SrcPort                 1
+      DstBlock                "RS485_diagnostics"
+      DstPort                 1
+      #GUID                   "4635293d-8e81-441e-ae0d-3b4cb1008ae8"
+    }
+    Line {
+      SrcBlock                "From13"
+      SrcPort                 1
+      DstBlock                "Display14"
+      DstPort                 1
+      #GUID                   "4382b0bf-398f-4d82-abc0-982a9cfc946f"
+    }
+    Line {
+      SrcBlock                "From2"
+      SrcPort                 1
+      DstBlock                "RS485_diagnostics"
+      DstPort                 3
+      #GUID                   "794075bb-96c8-4792-adc7-49471ce66bf1"
+    }
+    Line {
+      SrcBlock                "From3"
+      SrcPort                 1
+      DstBlock                "Display11"
+      DstPort                 1
+      #GUID                   "a7ba5281-a443-4eb0-9f45-553ed87a394e"
+    }
+    Line {
+      SrcBlock                "From4"
+      SrcPort                 1
+      DstBlock                "Display12"
+      DstPort                 1
+      #GUID                   "512f0588-4620-49a2-b589-6b235455442a"
+    }
+    Line {
+      SrcBlock                "From5"
+      SrcPort                 1
+      DstBlock                "Display13"
+      DstPort                 1
+      #GUID                   "2dcd9b44-be19-467a-9c4d-c9054a32b9bf"
+    }
+    Line {
+      SrcBlock                "MBM__RTC"
+      SrcPort                 3
+      DstBlock                "TRND"
+      DstPort                 1
+      #GUID                   "f48b37fc-4475-44fe-a1c6-c2a72264e212"
+    }
+    Line {
+      SrcBlock                "RS485_diagnostics"
+      SrcPort                 1
+      DstBlock                "Display6"
+      DstPort                 1
+      #GUID                   "5a140333-e918-49b6-ba59-de947f6a80ed"
+    }
+    Line {
+      SrcBlock                "RS485_diagnostics"
+      SrcPort                 2
+      DstBlock                "Display7"
+      DstPort                 1
+      #GUID                   "4286fef8-5dea-4bfa-8eff-94cc3ffc70be"
+    }
+    Line {
+      SrcBlock                "RS485_diagnostics"
+      SrcPort                 3
+      DstBlock                "Display8"
+      DstPort                 1
+      #GUID                   "3fe509f0-486e-4b19-934f-896475271cc7"
+    }
+    Line {
+      SrcBlock                "RS485_diagnostics"
+      SrcPort                 4
+      DstBlock                "Display9"
+      DstPort                 1
+      #GUID                   "a11aa9e1-121b-49bf-afa3-e9e9ee71ad21"
+    }
+    Line {
+      SrcBlock                "RS485_diagnostics"
+      SrcPort                 5
+      DstBlock                "Display10"
+      DstPort                 1
+      #GUID                   "49ea3de8-8614-43f5-b596-503b30fcadc1"
+    }
+    Annotation {
+      Position                [125, 315]
+      Text                    "Monarco HAT RS-485 diagnostics"
+      FontWeight              "bold"
+      FontSize                12
+      #GUID                   "054b6cfd-4a1b-4982-aee1-276a59ffa10c"
+    }
+    Annotation {
+      Position                [405, 540]
+      Text                    "Bytes received via RS-485"
+      #GUID                   "98856658-7b89-4776-b74b-c24539335074"
+    }
+    Annotation {
+      Position                [410, 570]
+      Text                    "Bytes transmitted via RS-485"
+      #GUID                   "189aaf14-f33f-4526-b2d7-2e9cc4bbb51e"
+    }
+    Annotation {
+      Position                [405, 605]
+      Text                    "Framing errors on RS-485"
+      #GUID                   "5f041d2f-c8d2-4fdb-9743-f7cfcb379589"
+    }
+    Annotation {
+      Position                [400, 635]
+      Text                    "Parity errors on RS-485"
+      #GUID                   "8d68407b-49ac-4b03-9d16-c56bc338f3e3"
     }
   }
 }

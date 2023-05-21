@@ -41,7 +41,7 @@ Model {
   System {
     Name                    "GoodWe_exec"
     Location                [11, 35, 260, 449]
-    __ProjectState          "{\"runtime_mode\":0,\"simstepsinput_ticks\":1000,\"simstepsinput_time\":\"00:00:00.000\",\"simstepsinput_unit\":0,\"tabs\":{\"windows\":[{\"id\":\"tabs11\",\"tabs\":[{\"class\":\"mdl\",\"id\":\"GoodWe_exec.mdl\"},{\"class\":\"mdl\",\"id\":\"GoodWe_task.mdl\"}]}]},\"watch_panel\":{\"signals\":[]}}"
+    __ProjectState          "{\"runtime_mode\":0,\"simstepsinput_ticks\":1000,\"simstepsinput_time\":\"00:00:00.000\",\"simstepsinput_unit\":0,\"tabs\":{\"windows\":[{\"id\":\"tabs11\",\"tabs\":[{\"class\":\"mdl\",\"id\":\"GoodWe_exec.mdl\"},{\"class\":\"mdl\",\"id\":\"GoodWe_task.mdl\"},{\"class\":\"trend\",\"id\":\"GoodWe_task.TRND\"}]}]},\"watch_panel\":{\"signals\":[]}}"
     #GUID                   "764087fb-0120-425a-b6c4-f0ad598d1aba"
     Block {
       BlockType               Reference

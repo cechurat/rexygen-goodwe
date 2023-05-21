@@ -13,7 +13,7 @@ Modbus {
     SlaveAdr                247
     RegisterAdr             35100
     Type                    0x00000204
-    Count                   121
+    Count                   30
   }
   Item {
     Name                    "RTC"
