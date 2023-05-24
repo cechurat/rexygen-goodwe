@@ -3,7 +3,7 @@ Modbus {
   BaudRate                115200
   Parity                  0
   SyncTime                200
-  SpaceTime               0
+  SpaceTime               10
   Timeout                 100
   Flags                   0x0000
   Gap                     10000
