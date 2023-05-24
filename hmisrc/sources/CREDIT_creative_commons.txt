@@ -9,6 +9,7 @@ inverter by Pham Duy Phuong Hung from <a href="https://thenounproject.com/browse
 House by IYIKON from <a href="https://thenounproject.com/browse/icons/term/house/" target="_blank" title="House Icons">Noun Project</a>
 solar panels by sulistiyono1986 from <a href="https://thenounproject.com/browse/icons/term/solar-panels/" target="_blank" title="solar panels Icons">Noun Project</a>
 Battery by Vectors Market from <a href="https://thenounproject.com/browse/icons/term/battery/" target="_blank" title="Battery Icons">Noun Project</a>
+Power Lines by Nikita Kozin from <a href="https://thenounproject.com/browse/icons/term/power-lines/" target="_blank" title="Power Lines Icons">Noun Project</a>
 
 
 plain-text version:
@@ -22,3 +23,4 @@ inverter by Pham Duy Phuong Hung from Noun Project (CCBY3.0)
 House by IYIKON from Noun Project (CCBY3.0)
 solar panels by sulistiyono1986 from Noun Project (CCBY3.0)
 Battery by Vectors Market from Noun Project (CCBY3.0)
+Power Lines by Nikita Kozin from Noun Project (CCBY3.0)
