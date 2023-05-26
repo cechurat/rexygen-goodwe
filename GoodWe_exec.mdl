@@ -126,6 +126,7 @@ Model {
       timer                   off
       FontSize                10
       cpu                     -1
+      #RTFlags                1025
       #GUID                   "d7518740-c58e-4ee4-bd61-c4960d1b7365"
     }
     Block {
