@@ -1,8 +1,8 @@
 Modbus {
-  Name                    "/dev/ttyAMA0"
-  BaudRate                115200
+  Name                    "/dev/ttyUSB0"
+  BaudRate                9600
   Parity                  0
-  SyncTime                200
+  SyncTime                20
   SpaceTime               2
   Timeout                 100
   Flags                   0x0000

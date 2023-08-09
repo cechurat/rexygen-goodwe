@@ -1,7 +1,7 @@
 Model {
   Name                    "GoodWe_task"
   Version                 3.00
-  #RexVersion             "2.52.0 rev. 15343, Date 2023-05-14"
+  #RexVersion             "2.52.0 rev. 15123, Date 2023-03-29"
   ShowPortLabels          on
   SavedCharacterEncoding  "UTF-8"
   MaskType                "REX sequence"
@@ -62,6 +62,15 @@ Model {
       SourceBlock             "mathlib/CNB"
       YCN                     on
       #GUID                   "92c80d6e-829f-4f07-bf4a-67a60c039028"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNB1"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [130, 273, 150, 287]
+      SourceBlock             "mathlib/CNB"
+      YCN                     off
+      #GUID                   "b6e7e953-3523-4046-a53e-8375f183b84e"
     }
     Block {
       BlockType               Reference
@@ -305,8 +314,17 @@ Model {
       BSTATE                  off
       pwidth                  1
       RPTF                    off
+      FontSize                10
       #GUID                   "bcfbf041-d5f4-4bb4-81b4-b44dc0ea3d37"
       #SignalWatchMask        "01"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "OR"
+      Ports                   [2, 2, 0, 0, 0]
+      Position                [180, 238, 215, 262]
+      SourceBlock             "logiclib/OR"
+      #GUID                   "81e0e0da-c5c6-4815-b6b9-ffd1a93535fc"
     }
     Block {
       BlockType               SubSystem
@@ -829,6 +847,14 @@ Model {
       #GUID                   "234e66fe-182f-4020-977b-c9a9ac83d7d3"
     }
     Line {
+      SrcBlock                "CNB1"
+      SrcPort                 1
+      Points                  [5, 0; 0, -25]
+      DstBlock                "OR"
+      DstPort                 2
+      #GUID                   "214780ff-711b-4257-aa6c-09cb9f53c171"
+    }
+    Line {
       SrcBlock                "DIF"
       SrcPort                 1
       Points                  [45, 0]
@@ -902,9 +928,16 @@ Model {
     Line {
       SrcBlock                "MP"
       SrcPort                 1
+      DstBlock                "OR"
+      DstPort                 1
+      #GUID                   "3c856572-bb94-4f4f-b172-c806ad4db718"
+    }
+    Line {
+      SrcBlock                "OR"
+      SrcPort                 1
       DstBlock                "Goto"
       DstPort                 1
-      #GUID                   "1eab24ef-66b5-4452-8575-61476838b785"
+      #GUID                   "21f1807f-c1ec-4bf0-a466-f11cf374e2cc"
     }
     Line {
       SrcBlock                "RS485_diagnostics"
