@@ -1,7 +1,7 @@
 Model {
   Name                    "GoodWe_exec"
   Version                 3.00
-  #RexVersion             "2.52.0 rev. 15123, Date 2023-03-29"
+  #RexVersion             "2.52.0 rev. 15343, Date 2023-05-14"
   ShowPortLabels          on
   SavedCharacterEncoding  "UTF-8"
   MaskType                "REX sequence"
@@ -119,13 +119,14 @@ Model {
       SourceBlock             "execlib/IODRV"
       module                  "MbDrv"
       classname               "MbmDrv"
-      cfgname                 "GoodWe_RTU_cfg.rio"
+      cfgname                 "GoodWe_RTU_cfg_minimal.rio"
       factor                  100
       stack                   10240
       pri                     3
       timer                   off
       FontSize                10
       cpu                     -1
+      #RTFlags                1025
       #GUID                   "d7518740-c58e-4ee4-bd61-c4960d1b7365"
     }
     Block {

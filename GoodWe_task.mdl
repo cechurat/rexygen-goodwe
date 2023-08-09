@@ -1,7 +1,7 @@
 Model {
   Name                    "GoodWe_task"
   Version                 3.00
-  #RexVersion             "2.52.0 rev. 15123, Date 2023-03-29"
+  #RexVersion             "2.52.0 rev. 15343, Date 2023-05-14"
   ShowPortLabels          on
   SavedCharacterEncoding  "UTF-8"
   MaskType                "REX sequence"
@@ -45,12 +45,33 @@ Model {
     #GUID                   "55e50adb-48b8-42ff-a0e8-0bf151040f8b"
     Block {
       BlockType               Reference
+      Name                    "BDHEXD"
+      Ports                   [1, 16, 0, 0, 0]
+      Position                [890, 446, 925, 614]
+      SourceBlock             "logiclib/BDHEXD"
+      shift                   0
+      vtype                   "4: Long (I32)"
+      #GUID                   "6c1e4ddb-d0cf-4a4b-8b95-cfabb5ffe455"
+      #SignalWatchMask        "ffff01"
+    }
+    Block {
+      BlockType               Reference
       Name                    "CNB"
       Ports                   [0, 1, 0, 0, 0]
       Position                [160, 83, 180, 97]
       SourceBlock             "mathlib/CNB"
       YCN                     on
       #GUID                   "92c80d6e-829f-4f07-bf4a-67a60c039028"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "DIF"
+      Ports                   [3, 1, 0, 0, 0]
+      Position                [110, 43, 135, 77]
+      SourceBlock             "mathlib/DIF"
+      ISSF                    off
+      FontSize                10
+      #GUID                   "b8cd3f47-2bb5-4721-ac9e-a88e1903b787"
     }
     Block {
       BlockType               Display
@@ -62,6 +83,7 @@ Model {
       Suffix                  ""
       DispValue               ""
       #GUID                   "7de3e32b-ffa1-444f-ae74-e7c836a19a91"
+      #SignalWatchMask        "10"
     }
     Block {
       BlockType               Display
@@ -73,6 +95,7 @@ Model {
       Suffix                  ""
       DispValue               ""
       #GUID                   "f8d9f581-9850-4cbc-808e-8c779ddc84e0"
+      #SignalWatchMask        "10"
     }
     Block {
       BlockType               Display
@@ -84,6 +107,7 @@ Model {
       Suffix                  ""
       DispValue               ""
       #GUID                   "56e4f40a-fa76-424b-baca-dc6afbca9f3a"
+      #SignalWatchMask        "10"
     }
     Block {
       BlockType               Display
@@ -95,6 +119,7 @@ Model {
       Suffix                  ""
       DispValue               ""
       #GUID                   "2d2895b6-10d5-4341-bbfc-2dc88ce010da"
+      #SignalWatchMask        "10"
     }
     Block {
       BlockType               Display
@@ -106,6 +131,7 @@ Model {
       Suffix                  ""
       DispValue               ""
       #GUID                   "92980fd5-d9e9-4bd2-8d8b-83da207db0b4"
+      #SignalWatchMask        "10"
     }
     Block {
       BlockType               Display
@@ -117,6 +143,7 @@ Model {
       Suffix                  ""
       DispValue               ""
       #GUID                   "8c904b3a-8a03-4d19-af93-4bcd093cb1b9"
+      #SignalWatchMask        "10"
     }
     Block {
       BlockType               Display
@@ -128,6 +155,7 @@ Model {
       Suffix                  ""
       DispValue               ""
       #GUID                   "096dc099-52ce-4e87-a653-c47294ec56a3"
+      #SignalWatchMask        "10"
     }
     Block {
       BlockType               Display
@@ -139,6 +167,7 @@ Model {
       Suffix                  ""
       DispValue               ""
       #GUID                   "8775508e-6249-4c63-afd6-e6c2c7233abd"
+      #SignalWatchMask        "10"
     }
     Block {
       BlockType               Display
@@ -150,6 +179,7 @@ Model {
       Suffix                  ""
       DispValue               ""
       #GUID                   "6d0778a2-dbe6-4baa-8048-6575ccd4888e"
+      #SignalWatchMask        "10"
     }
     Block {
       BlockType               From
@@ -215,6 +245,28 @@ Model {
       #GUID                   "2291e0cf-5aa8-453b-bd4b-7c41fc3dd4ad"
     }
     Block {
+      BlockType               From
+      Name                    "From6"
+      Position                [700, 523, 835, 537]
+      ShowName                off
+      GotoTag                 "MNR__SDCR0x00A"
+      BackgroundColor         "yellow"
+      FontSize                10
+      #GUID                   "ca44494d-4b87-4652-8ae3-2524f2a80990"
+      #SignalWatchMask        "01"
+    }
+    Block {
+      BlockType               Goto
+      Name                    "Goto"
+      Position                [245, 238, 430, 252]
+      ShowName                off
+      GotoTag                 "MBM__running_data_ReadEnable"
+      TagVisibility           "local"
+      FontSize                10
+      #GUID                   "e2174da6-3c39-49c3-8584-d72c7cd1aac0"
+      #SignalWatchMask        "01"
+    }
+    Block {
       BlockType               Reference
       Name                    "MBM__PV1"
       Ports                   [0, 4, 0, 0, 0]
@@ -243,6 +295,18 @@ Model {
       FontSize                10
       #GUID                   "e6d32c6d-1b52-4dcf-8879-607433ef7e09"
       #SignalWatchMask        "0f"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MP"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [135, 238, 150, 252]
+      SourceBlock             "genlib/MP"
+      BSTATE                  off
+      pwidth                  1
+      RPTF                    off
+      #GUID                   "bcfbf041-d5f4-4bb4-81b4-b44dc0ea3d37"
+      #SignalWatchMask        "01"
     }
     Block {
       BlockType               SubSystem
@@ -765,6 +829,14 @@ Model {
       #GUID                   "234e66fe-182f-4020-977b-c9a9ac83d7d3"
     }
     Line {
+      SrcBlock                "DIF"
+      SrcPort                 1
+      Points                  [45, 0]
+      DstBlock                "TRND"
+      DstPort                 1
+      #GUID                   "da444747-a088-4e7f-ad1c-289fac97c721"
+    }
+    Line {
       SrcBlock                "From1"
       SrcPort                 1
       DstBlock                "RS485_diagnostics"
@@ -814,11 +886,25 @@ Model {
       #GUID                   "2dcd9b44-be19-467a-9c4d-c9054a32b9bf"
     }
     Line {
+      SrcBlock                "From6"
+      SrcPort                 1
+      DstBlock                "BDHEXD"
+      DstPort                 1
+      #GUID                   "b1594744-9e7a-4153-9710-37b24c15027c"
+    }
+    Line {
       SrcBlock                "MBM__RTC"
       SrcPort                 3
-      DstBlock                "TRND"
+      DstBlock                "DIF"
       DstPort                 1
-      #GUID                   "f48b37fc-4475-44fe-a1c6-c2a72264e212"
+      #GUID                   "1cdc966f-3a85-4c0d-b463-d65d48d704e4"
+    }
+    Line {
+      SrcBlock                "MP"
+      SrcPort                 1
+      DstBlock                "Goto"
+      DstPort                 1
+      #GUID                   "1eab24ef-66b5-4452-8575-61476838b785"
     }
     Line {
       SrcBlock                "RS485_diagnostics"
@@ -881,6 +967,24 @@ Model {
       Position                [400, 635]
       Text                    "Parity errors on RS-485"
       #GUID                   "8d68407b-49ac-4b03-9d16-c56bc338f3e3"
+    }
+    Annotation {
+      Position                [935, 445]
+      Text                    "terminal resistor 120Ohm"
+      HorizontalAlignment     "left"
+      VerticalAlignment       "top"
+      #ImgPth                 ""
+      BackgroundColor         [1, 1, 1]
+      ForegroundColor         "black"
+      BgOpacity               100
+      FontName                "Arial"
+      FontWeight              "normal"
+      FontAngle               "normal"
+      FontSize                10
+      Autosize                on
+      Width                   150
+      Height                  150
+      #GUID                   "d44634a1-d679-458c-be1d-da85e1165c76"
     }
   }
 }

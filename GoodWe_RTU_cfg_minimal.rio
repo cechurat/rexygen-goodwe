@@ -2,7 +2,7 @@ Modbus {
   Name                    "/dev/ttyAMA0"
   BaudRate                115200
   Parity                  0
-  SyncTime                200
+  SyncTime                25
   SpaceTime               10
   Timeout                 100
   Flags                   0x0000
@@ -13,7 +13,8 @@ Modbus {
     SlaveAdr                247
     RegisterAdr             35100
     Type                    0x00000204
-    Count                   30
+    Count                   12
+    Period                  3000
   }
   Item {
     Name                    "RTC"
