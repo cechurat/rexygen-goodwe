@@ -1,7 +1,7 @@
 Model {
   Name                    "GoodWe_exec"
   Version                 3.00
-  #RexVersion             "2.52.0 rev. 15123, Date 2023-03-29"
+  #RexVersion             "2.52.0 rev. 15511, Date 2023-07-13"
   ShowPortLabels          on
   SavedCharacterEncoding  "UTF-8"
   MaskType                "REX sequence"
@@ -41,8 +41,23 @@ Model {
   System {
     Name                    "GoodWe_exec"
     Location                [11, 35, 260, 449]
-    __ProjectState          "{\"runtime_mode\":0,\"simstepsinput_ticks\":1000,\"simstepsinput_time\":\"00:00:00.000\",\"simstepsinput_unit\":0,\"tabs\":{\"windows\":[{\"id\":\"tabs11\",\"tabs\":[{\"class\":\"mdl\",\"id\":\"GoodWe_exec.mdl\"},{\"class\":\"mdl\",\"id\":\"GoodWe_task.mdl\"},{\"class\":\"trend\",\"id\":\"GoodWe_task.TRND\"}]}]},\"watch_panel\":{\"signals\":[]}}"
+    __ProjectState          "{\"runtime_mode\":0,\"simstepsinput_ticks\":1000,\"simstepsinput_time\":\"00:00:00.000\",\"simstepsinput_unit\":0,\"tabs\":{\"windows\":[{\"id\":\"tabs11\",\"tabs\":[{\"class\":\"mdl\",\"id\":\"GoodWe_exec.mdl\"},{\"class\":\"mdl\",\"id\":\"GoodWe_task.mdl\"},{\"class\":\"trend\",\"id\":\"GoodWe_task.TRNDV_total\"}]}]},\"watch_panel\":{\"signals\":[]}}"
     #GUID                   "764087fb-0120-425a-b6c4-f0ad598d1aba"
+    Block {
+      BlockType               Reference
+      Name                    "ARC"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [105, 133, 155, 147]
+      SourceBlock             "execlib/ARC"
+      atype                   "3: Disk"
+      asize                   102400
+      nmarks                  720
+      ldaymax                 1048576
+      period                  300
+      timesrc                 "1: CORETIMER"
+      FontSize                10
+      #GUID                   "a801f91e-a72f-4491-aea9-166cd35d56ba"
+    }
     Block {
       BlockType               Reference
       Name                    "EXEC"
@@ -72,7 +87,7 @@ Model {
       Ports                   [1, 1, 0, 0, 0]
       Position                [105, 203, 155, 217]
       SourceBlock             "execlib/TASK"
-      factor                  1
+      factor                  100
       start                   0
       stop                    1
       stack                   10240
@@ -115,7 +130,7 @@ Model {
       BlockType               Reference
       Name                    "MBM"
       Ports                   [1, 1, 0, 0, 0]
-      Position                [175, 98, 225, 112]
+      Position                [105, 98, 155, 112]
       SourceBlock             "execlib/IODRV"
       module                  "MbDrv"
       classname               "MbmDrv"
@@ -128,24 +143,6 @@ Model {
       cpu                     -1
       #RTFlags                1025
       #GUID                   "d7518740-c58e-4ee4-bd61-c4960d1b7365"
-    }
-    Block {
-      BlockType               Reference
-      Name                    "MNR"
-      Ports                   [1, 1, 0, 0, 0]
-      Position                [100, 98, 150, 112]
-      SourceBlock             "execlib/IODRV"
-      module                  "MonarcoDrv"
-      classname               "MonarcoHatDrv"
-      cfgname                 "monarcohat.rio"
-      factor                  10
-      stack                   10240
-      pri                     3
-      timer                   off
-      cpu                     -1
-      #RTFlags                5
-      FontSize                10
-      #GUID                   "381e3fd3-c547-4098-8693-ba9b2f153906"
     }
     Block {
       BlockType               Reference
@@ -165,9 +162,16 @@ Model {
     Line {
       SrcBlock                "EXEC"
       SrcPort                 2
-      DstBlock                "MNR"
+      DstBlock                "MBM"
       DstPort                 1
       #GUID                   "ac774c94-3a9c-4354-8820-df0d20a37059"
+    }
+    Line {
+      SrcBlock                "EXEC"
+      SrcPort                 3
+      DstBlock                "ARC"
+      DstPort                 1
+      #GUID                   "1968e1e7-c922-4cc8-be83-6e7432176dd0"
     }
     Line {
       SrcBlock                "EXEC"
@@ -175,13 +179,6 @@ Model {
       DstBlock                "GoodWe_task"
       DstPort                 1
       #GUID                   "19318977-d14e-4bd5-a623-25d2d3fdd4ba"
-    }
-    Line {
-      SrcBlock                "MNR"
-      SrcPort                 1
-      DstBlock                "MBM"
-      DstPort                 1
-      #GUID                   "566db493-82ae-4045-ba81-5cb2eb4a92a3"
     }
     Annotation {
       Position                [15, 10]

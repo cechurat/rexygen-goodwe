@@ -44,6 +44,13 @@ Modbus {
     Count                   4
   }
   Item {
+    Name                    "PV1_power"
+    SlaveAdr                247
+    RegisterAdr             35105
+    Type                    0x00080224
+    Count                   2
+  }
+  Item {
     Name                    "PV2"
     SlaveAdr                247
     RegisterAdr             35107
@@ -51,10 +58,17 @@ Modbus {
     Count                   4
   }
   Item {
-    Name                    "PV_mode"
+    Name                    "PV2_power"
+    SlaveAdr                247
+    RegisterAdr             35109
+    Type                    0x00080224
+    Count                   2
+  }
+  Item {
+    Name                    "PV1_mode"
     SlaveAdr                247
     RegisterAdr             35119
-    Type                    0x00080224
+    Type                    0x00080204
     Count                   2
   }
   Item {
@@ -366,14 +380,14 @@ Modbus {
     Count                   1
   }
   Item {
-    Name                    "mete_E_total_sell"
+    Name                    "E_total_sell"
     SlaveAdr                247
     RegisterAdr             36015
     Type                    0x00080244
     Count                   2
   }
   Item {
-    Name                    "mete_E_total_buy"
+    Name                    "E_total_buy"
     SlaveAdr                247
     RegisterAdr             36017
     Type                    0x00080244
