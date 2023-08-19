@@ -1,7 +1,7 @@
 Model {
   Name                    "GoodWe_task"
   Version                 3.00
-  #RexVersion             "2.52.0 rev. 15511, Date 2023-07-13"
+  #RexVersion             "2.52.0 rev. 15123, Date 2023-03-29"
   ShowPortLabels          on
   SavedCharacterEncoding  "UTF-8"
   MaskType                "REX sequence"
@@ -53,6 +53,24 @@ Model {
       #GUID                   "a1ba35c2-69e8-41cf-915d-5fd92d1f4fb2"
     }
     Block {
+      BlockType               Reference
+      Name                    "CNB1"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [280, 1023, 300, 1037]
+      SourceBlock             "mathlib/CNB"
+      YCN                     on
+      #GUID                   "858f3473-8323-4fc0-bf52-4bb881fe5c50"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNB2"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [690, 1023, 710, 1037]
+      SourceBlock             "mathlib/CNB"
+      YCN                     on
+      #GUID                   "4f69f3b3-19b9-4634-9a2e-ee9b0f89bd00"
+    }
+    Block {
       BlockType               From
       Name                    "From1"
       Position                [40, 563, 170, 577]
@@ -65,7 +83,7 @@ Model {
     Block {
       BlockType               From
       Name                    "From10"
-      Position                [40, 988, 235, 1002]
+      Position                [45, 983, 240, 997]
       ShowName                off
       GotoTag                 "MBM__R_phase_load_power"
       FontSize                10
@@ -75,7 +93,7 @@ Model {
     Block {
       BlockType               From
       Name                    "From11"
-      Position                [40, 1078, 235, 1092]
+      Position                [450, 1043, 645, 1057]
       ShowName                off
       GotoTag                 "MBM__total_backup_load_power"
       FontSize                10
@@ -85,7 +103,7 @@ Model {
     Block {
       BlockType               From
       Name                    "From12"
-      Position                [40, 1103, 235, 1117]
+      Position                [45, 1043, 240, 1057]
       ShowName                off
       GotoTag                 "MBM__total_load_power"
       FontSize                10
@@ -115,7 +133,7 @@ Model {
     Block {
       BlockType               From
       Name                    "From15"
-      Position                [45, 1648, 240, 1662]
+      Position                [45, 1628, 240, 1642]
       ShowName                off
       GotoTag                 "MBM__E_sell_day"
       FontSize                10
@@ -195,7 +213,7 @@ Model {
     Block {
       BlockType               From
       Name                    "From22"
-      Position                [40, 1508, 235, 1522]
+      Position                [40, 1498, 235, 1512]
       ShowName                off
       GotoTag                 "MBM__error_message"
       FontSize                10
@@ -227,7 +245,7 @@ Model {
       Name                    "From25"
       Position                [425, 358, 620, 372]
       ShowName                off
-      GotoTag                 "MBM__PV1_mode"
+      GotoTag                 "MBM__PV_mode"
       FontSize                10
       #GUID                   "dc26323e-74ce-4bf4-87ae-a419ad9578ee"
       #SignalWatchMask        "01"
@@ -325,7 +343,7 @@ Model {
     Block {
       BlockType               From
       Name                    "From5"
-      Position                [15, 748, 210, 762]
+      Position                [450, 983, 645, 997]
       ShowName                off
       GotoTag                 "MBM__backup_R_phase_load_power"
       FontSize                10
@@ -335,7 +353,7 @@ Model {
     Block {
       BlockType               From
       Name                    "From6"
-      Position                [40, 848, 235, 862]
+      Position                [450, 1003, 645, 1017]
       ShowName                off
       GotoTag                 "MBM__backup_S_phase_load_power"
       FontSize                10
@@ -345,7 +363,7 @@ Model {
     Block {
       BlockType               From
       Name                    "From7"
-      Position                [40, 948, 235, 962]
+      Position                [450, 1023, 645, 1037]
       ShowName                off
       GotoTag                 "MBM__backup_T_phase_load_power"
       FontSize                10
@@ -355,7 +373,7 @@ Model {
     Block {
       BlockType               From
       Name                    "From8"
-      Position                [40, 1043, 235, 1057]
+      Position                [45, 1023, 240, 1037]
       ShowName                off
       GotoTag                 "MBM__T_phase_load_power"
       FontSize                10
@@ -365,12 +383,22 @@ Model {
     Block {
       BlockType               From
       Name                    "From9"
-      Position                [40, 1018, 235, 1032]
+      Position                [45, 1003, 240, 1017]
       ShowName                off
       GotoTag                 "MBM__S_phase_load_power"
       FontSize                10
       #GUID                   "cbe575b5-7e5c-4bf8-b451-42b3aa2f6ac2"
       #SignalWatchMask        "01"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "GAIN"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [265, 1138, 290, 1152]
+      SourceBlock             "mathlib/GAIN"
+      k                       ".01"
+      FontSize                10
+      #GUID                   "b8e87d35-5470-4ee9-94cc-aa7e354bae6a"
     }
     Block {
       BlockType               Reference
@@ -491,16 +519,6 @@ Model {
     }
     Block {
       BlockType               Reference
-      Name                    "MBM__battery_VIP"
-      Ports                   [0, 4, 0, 0, 0]
-      Position                [125, 1322, 155, 1368]
-      SourceBlock             "inoutlib/INQUAD"
-      FontSize                10
-      #GUID                   "c4c0f36d-eed5-4eec-98a9-0c981fb7dfbf"
-      #SignalWatchMask        "0f"
-    }
-    Block {
-      BlockType               Reference
       Name                    "MBM__grid_mode"
       Ports                   [0, 4, 0, 0, 0]
       Position                [575, 427, 605, 473]
@@ -511,23 +529,48 @@ Model {
     }
     Block {
       BlockType               Reference
-      Name                    "MBM__temperature"
-      Ports                   [0, 4, 0, 0, 0]
-      Position                [110, 1172, 140, 1218]
-      SourceBlock             "inoutlib/INQUAD"
+      Name                    "PARE_battery_status"
+      Ports                   [2, 2, 0, 0, 0]
+      Position                [320, 1398, 355, 1422]
+      SourceBlock             "paramlib/PARE"
+      ipar                    "0: No battery, inverter disconnects to battery"
+      pupstr                  "0: No battery, inverter disconnects to battery|1: Standby, no discharging and no charging|2: Discharging|3: Charging|4: Waiting for charge|5: Waiting for discharge\\n"
+      NUM                     off
+      LIST                    off
+      SATF                    off
       FontSize                10
-      #GUID                   "b486859c-ff4e-4cbf-abc4-ce29a3cc8f80"
-      #SignalWatchMask        "0f"
+      #GUID                   "20eb1020-2555-4bfa-a080-d6e1d383733b"
+      #SignalWatchMask        "0f00"
     }
     Block {
       BlockType               Reference
-      Name                    "MBM__total_PV_feed"
-      Ports                   [0, 4, 0, 0, 0]
-      Position                [80, 1552, 110, 1598]
-      SourceBlock             "inoutlib/INQUAD"
+      Name                    "PARE_error_message"
+      Ports                   [2, 2, 0, 0, 0]
+      Position                [320, 1498, 355, 1522]
+      SourceBlock             "paramlib/PARE"
+      ipar                    "0: No error"
+      pupstr                  "0: No error|1: GFCI Device Check Failure|2: AC HCT Check Failure|3: N/A|4: DCI Consistency Failure|5:GFCI Consistency Failure|6: N/A|7: GFCI Device Failure|8: Relay Device Failure|9: AC HCT Failure|10: Utility Loss|11: Ground I Failure|12: DC Bus High|13: Internal Fan Failure|14: Over Temperature|15: Utility Phase Failure|16: PV Over Voltage|17: External Fan Failure|18: Vac Failure|19: Isolation Failure|20: DC Injection High|21: Backup Overload|22: N/A|23: Fac Consistency Failure|24: Vac Consistency Failure|25: N/A|26: Relay Check Failure|27: N/A|28: Phase Angle Failure|29: DSP Communication Failure|30: Fac Failure|31: EEPROM R/W Failure|32: Internal Communication Failure"
+      NUM                     on
+      LIST                    on
+      SATF                    off
       FontSize                10
-      #GUID                   "79d29b6f-3827-4989-9bbb-cde61e47dbc9"
-      #SignalWatchMask        "0f"
+      #GUID                   "493970ef-5a92-4681-975e-0c59fc66e999"
+      #SignalWatchMask        "0f00"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "PARE_work_mode"
+      Ports                   [2, 2, 0, 0, 0]
+      Position                [320, 1443, 355, 1467]
+      SourceBlock             "paramlib/PARE"
+      ipar                    "0: No battery, inverter disconnects to battery"
+      pupstr                  "0: Wait - Cut of all the connection to inverter|1: On-Grid - PV inputs to inverter, inverter outputs to grid|2: Off-Grid - PV inputs to inverter (first), battery inputs to inverter (second), inverter work as AC source|3: Fault|4: Flash - Inverter upgrade|5: Check - Power on self-check of inverter\\n"
+      NUM                     off
+      LIST                    off
+      SATF                    off
+      FontSize                10
+      #GUID                   "78adb826-b8c6-45dc-a0c4-d61982f1f92e"
+      #SignalWatchMask        "0f00"
     }
     Block {
       BlockType               Reference
@@ -597,7 +640,7 @@ Model {
       BlockType               Reference
       Name                    "RTOV3"
       Ports                   [9, 1, 0, 0, 0]
-      Position                [390, 1597, 435, 1693]
+      Position                [390, 1537, 435, 1633]
       SourceBlock             "matrixlib/RTOV"
       nmax                    16
       offset                  0
@@ -621,31 +664,6 @@ Model {
     }
     Block {
       BlockType               Reference
-      Name                    "TRND"
-      Ports                   [6, 5, 0, 0, 0]
-      Position                [310, 558, 355, 632]
-      SourceBlock             "arclib/TRND"
-      n                       4
-      l                       10000
-      btype                   "8: Double (F64)"
-      ptype1                  "1: Store"
-      ptype2                  "1: Store"
-      ptype3                  "1: Store"
-      ptype4                  "1: Store"
-      pfac                    1
-      afac                    1
-      arc                     1
-      id                      3
-      Title                   "Trend Title"
-      timesrc                 "1: CORETIMER"
-      SigNames                ""
-      ViewConfig              ""
-      FontSize                10
-      #GUID                   "2e94216f-ef20-4e38-bdca-f67f175a19be"
-      #SignalWatchMask        "ff070000"
-    }
-    Block {
-      BlockType               Reference
       Name                    "TRNDV_PV"
       Ports                   [3, 1, 0, 0, 0]
       Position                [275, 203, 320, 237]
@@ -657,10 +675,10 @@ Model {
       afac                    1
       arc                     1
       id                      1
-      Title                   "Trend Title"
+      Title                   "PV State"
       timesrc                 "1: CORETIMER"
-      SigNames                ""
-      ViewConfig              "{\"View\":{\"Data\":{\"History\":30.517578125,\"XAxisTimeFormat\":66},\"PropertiesModel\":[{\"Id\":0,\"Items\":[{\"Color\":\"#000099\",\"Id\":0,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":3},{\"Color\":\"#669900\",\"Id\":1,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":4},{\"Color\":\"#ff0000\",\"Id\":2,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":5},{\"Color\":\"#9966cc\",\"Id\":3,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":3},{\"Color\":\"#339999\",\"Id\":4,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":4},{\"Color\":\"#996600\",\"Id\":5,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":5}]}],\"Scenes\":[{\"Id\":3},{\"Id\":4},{\"Id\":5}],\"sync\":false}}"
+      SigNames                "PV1 voltage\\nPV1 current\\nPV1 power\\nPV2 voltage\\nPV2 current\\nPV2 power"
+      ViewConfig              "{\"View\":{\"Data\":{\"History\":30.517578125,\"XAxisTimeFormat\":66},\"PropertiesModel\":[{\"Id\":0,\"Items\":[{\"Color\":\"#000099\",\"Id\":0,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"PV1 voltage\",\"SceneNumber\":25},{\"Color\":\"#669900\",\"Id\":1,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"PV1 current\",\"SceneNumber\":26},{\"Color\":\"#ff0000\",\"Id\":2,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"PV1 power\",\"SceneNumber\":27},{\"Color\":\"#9966cc\",\"Id\":3,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"PV2 voltage\",\"SceneNumber\":25},{\"Color\":\"#339999\",\"Id\":4,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"PV2 current\",\"SceneNumber\":26},{\"Color\":\"#996600\",\"Id\":5,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"PV2 power\",\"SceneNumber\":27}]}],\"Scenes\":[{\"Id\":25},{\"Id\":26},{\"Id\":27}],\"sync\":false}}"
       FontSize                10
       #GUID                   "980fff41-2047-4167-a6a3-6f9b642413d6"
     }
@@ -680,7 +698,7 @@ Model {
       Title                   "Trend Title"
       timesrc                 "1: CORETIMER"
       SigNames                ""
-      ViewConfig              "{\"View\":{\"Data\":{\"History\":439.80465111040024,\"XAxisTimeFormat\":66},\"PropertiesModel\":[{\"Id\":0,\"Items\":[{\"Color\":\"#000099\",\"Id\":0,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"signal 1\",\"SceneNumber\":16},{\"Color\":\"#669900\",\"Id\":1,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":17},{\"Color\":\"#ff0000\",\"Id\":2,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":18},{\"Color\":\"#9966cc\",\"Id\":3,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":19},{\"Color\":\"#339999\",\"Id\":4,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":16},{\"Color\":\"#996600\",\"Id\":5,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":17},{\"Color\":\"#ff6666\",\"Id\":6,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":18},{\"Color\":\"#006600\",\"Id\":7,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":19},{\"Color\":\"#990066\",\"Id\":8,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":16},{\"Color\":\"#cc9900\",\"Id\":9,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":17},{\"Color\":\"#330066\",\"Id\":10,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":18},{\"Color\":\"#ff6600\",\"Id\":11,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":19}]}],\"Scenes\":[{\"Id\":16},{\"Id\":17},{\"Id\":18},{\"Id\":19}],\"sync\":false}}"
+      ViewConfig              "{\"View\":{\"Data\":{\"History\":439.80465111040024,\"XAxisTimeFormat\":66},\"PropertiesModel\":[{\"Id\":0,\"Items\":[{\"Color\":\"#000099\",\"Id\":0,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L1 voltage\",\"SceneNumber\":31},{\"Color\":\"#669900\",\"Id\":1,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L1 current\",\"SceneNumber\":32},{\"Color\":\"#ff0000\",\"Id\":2,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L1 frequency\",\"SceneNumber\":33},{\"Color\":\"#9966cc\",\"Id\":3,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L1 power\",\"SceneNumber\":34},{\"Color\":\"#339999\",\"Id\":4,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L2 voltage\",\"SceneNumber\":31},{\"Color\":\"#996600\",\"Id\":5,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L2 current\",\"SceneNumber\":32},{\"Color\":\"#ff6666\",\"Id\":6,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L2 frequency\",\"SceneNumber\":33},{\"Color\":\"#006600\",\"Id\":7,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L2 power\",\"SceneNumber\":34},{\"Color\":\"#990066\",\"Id\":8,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L3 voltage\",\"SceneNumber\":31},{\"Color\":\"#cc9900\",\"Id\":9,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L3 current\",\"SceneNumber\":32},{\"Color\":\"#330066\",\"Id\":10,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L3 frequency\",\"SceneNumber\":33},{\"Color\":\"#ff6600\",\"Id\":11,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L3 power\",\"SceneNumber\":34}]}],\"Scenes\":[{\"Id\":31},{\"Id\":32},{\"Id\":33},{\"Id\":34}],\"sync\":false}}"
       FontSize                10
       #GUID                   "8056646e-6c5a-4710-908d-7648d4c3e9b6"
     }
@@ -706,13 +724,251 @@ Model {
     }
     Block {
       BlockType               Reference
-      Name                    "UTOI"
-      Ports                   [1, 1, 0, 0, 0]
-      Position                [395, 178, 420, 192]
-      SourceBlock             "mathlib/UTOI"
-      bits                    16
-      SWAP                    off
-      #GUID                   "e2bf8e8a-00b8-4f4c-aa18-31436aa3808e"
+      Name                    "TRND_backup_power"
+      Ports                   [6, 5, 0, 0, 0]
+      Position                [725, 978, 770, 1052]
+      SourceBlock             "arclib/TRND"
+      n                       4
+      l                       10000
+      btype                   "8: Double (F64)"
+      ptype1                  "1: Store"
+      ptype2                  "1: Store"
+      ptype3                  "1: Store"
+      ptype4                  "1: Store"
+      pfac                    1
+      afac                    1
+      arc                     1
+      id                      6
+      Title                   "Backup power"
+      timesrc                 "1: CORETIMER"
+      SigNames                ""
+      ViewConfig              "{\"View\":{\"Data\":{\"History\":30.22314549036578,\"XAxisTimeFormat\":66},\"PropertiesModel\":[{\"Id\":0,\"Items\":[{\"Color\":\"#000099\",\"Id\":0,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L1\",\"SceneNumber\":39},{\"Color\":\"#669900\",\"Id\":1,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L2\",\"SceneNumber\":39},{\"Color\":\"#ff0000\",\"Id\":2,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L3\",\"SceneNumber\":39},{\"Color\":\"#9966cc\",\"Id\":3,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"total\",\"SceneNumber\":39}]}],\"Scenes\":[{\"Id\":39}],\"sync\":false}}"
+      FontSize                10
+      #GUID                   "67e40a1e-3dbd-4f6e-9342-d9838243ea1d"
+      #SignalWatchMask        "ff070000"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "TRND_load_power"
+      Ports                   [6, 5, 0, 0, 0]
+      Position                [330, 978, 375, 1052]
+      SourceBlock             "arclib/TRND"
+      n                       4
+      l                       10000
+      btype                   "8: Double (F64)"
+      ptype1                  "1: Store"
+      ptype2                  "1: Store"
+      ptype3                  "1: Store"
+      ptype4                  "1: Store"
+      pfac                    1
+      afac                    1
+      arc                     1
+      id                      5
+      Title                   "Load power"
+      timesrc                 "1: CORETIMER"
+      SigNames                ""
+      ViewConfig              "{\"View\":{\"Data\":{\"History\":30.22314549036578,\"XAxisTimeFormat\":66},\"PropertiesModel\":[{\"Id\":0,\"Items\":[{\"Color\":\"#000099\",\"Id\":0,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L1\",\"SceneNumber\":39},{\"Color\":\"#669900\",\"Id\":1,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L2\",\"SceneNumber\":39},{\"Color\":\"#ff0000\",\"Id\":2,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"L3\",\"SceneNumber\":39},{\"Color\":\"#9966cc\",\"Id\":3,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"total\",\"SceneNumber\":39}]}],\"Scenes\":[{\"Id\":39}],\"sync\":false}}"
+      FontSize                10
+      #GUID                   "76e3ef25-c346-4685-8962-d0f402f8e31f"
+      #SignalWatchMask        "ff070000"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "TRND_total_power"
+      Ports                   [6, 5, 0, 0, 0]
+      Position                [310, 558, 355, 632]
+      SourceBlock             "arclib/TRND"
+      n                       4
+      l                       10000
+      btype                   "8: Double (F64)"
+      ptype1                  "1: Store"
+      ptype2                  "1: Store"
+      ptype3                  "1: Store"
+      ptype4                  "1: Store"
+      pfac                    1
+      afac                    1
+      arc                     1
+      id                      3
+      Title                   "Trend Title"
+      timesrc                 "1: CORETIMER"
+      SigNames                ""
+      ViewConfig              "{\"View\":{\"Data\":{\"History\":2097.1520000000014,\"XAxisTimeFormat\":66},\"PropertiesModel\":[{\"Id\":0,\"Items\":[{\"Color\":\"#000099\",\"Id\":0,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"total inverter power\",\"SceneNumber\":35},{\"Color\":\"#669900\",\"Id\":1,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"AC active power\",\"SceneNumber\":35},{\"Color\":\"#ff0000\",\"Id\":2,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":35},{\"Color\":\"#9966cc\",\"Id\":3,\"IsActive\":true,\"LineWidth\":2,\"SceneNumber\":35}]}],\"Scenes\":[{\"Id\":35}],\"sync\":false}}"
+      FontSize                10
+      #GUID                   "2e94216f-ef20-4e38-bdca-f67f175a19be"
+      #SignalWatchMask        "ff070000"
+    }
+    Block {
+      BlockType               SubSystem
+      Name                    "battery"
+      Ports                   [0, 3, 0, 0, 0]
+      Position                [110, 1331, 170, 1369]
+      FontSize                10
+      ShowPortLabels          on
+      MaskType                "REX sequence"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      #GUID                   "83f7c00c-293b-4e8c-9ae3-dd895b51f407"
+      System {
+        Name                    "battery"
+        __CopyByReference       off
+        #GUID                   "83f7c00c-293b-4e8c-9ae3-dd895b51f407"
+        Block {
+          BlockType               Reference
+          Name                    "GAIN"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [240, 28, 265, 42]
+          SourceBlock             "mathlib/GAIN"
+          k                       ".1"
+          FontSize                10
+          #GUID                   "86cf2cca-e973-493b-9225-913ef9f8f3a5"
+          #SignalWatchMask        "03"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "GAIN1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [240, 63, 265, 77]
+          SourceBlock             "mathlib/GAIN"
+          k                       ".1"
+          FontSize                10
+          #GUID                   "d39dab5d-d73b-4def-9a73-16a33b7e03a4"
+          #SignalWatchMask        "03"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "MBM__battery_VIP"
+          Ports                   [0, 4, 0, 0, 0]
+          Position                [50, 27, 80, 73]
+          SourceBlock             "inoutlib/INQUAD"
+          FontSize                10
+          #GUID                   "c4c0f36d-eed5-4eec-98a9-0c981fb7dfbf"
+          #SignalWatchMask        "0f"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "UTOI"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [180, 63, 205, 77]
+          SourceBlock             "mathlib/UTOI"
+          bits                    16
+          SWAP                    off
+          #GUID                   "b8c0e854-f4bc-489c-8e45-f154e06d9f58"
+          #SignalWatchMask        "03"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "UTOI1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [180, 98, 205, 112]
+          SourceBlock             "mathlib/UTOI"
+          bits                    16
+          SWAP                    off
+          #GUID                   "356de248-a5a5-4658-86b9-1113cce97ac5"
+          #SignalWatchMask        "03"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "voltage"
+          Position                [290, 28, 320, 42]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          Description             ""
+          FontSize                10
+          #GUID                   "d7f56ffc-8036-4280-9e1a-726083c99884"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "current"
+          Position                [290, 63, 320, 77]
+          Port                    2
+          OutDataTypeStr          "Inherit: auto"
+          Description             ""
+          FontSize                10
+          #GUID                   "ed96d3bc-468b-4e53-9023-0441a9cbfd4f"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "power"
+          Position                [290, 98, 320, 112]
+          Port                    3
+          OutDataTypeStr          "Inherit: auto"
+          Description             ""
+          FontSize                10
+          #GUID                   "a690ed15-8240-405c-a384-55c6cd584519"
+        }
+        Line {
+          SrcBlock                "GAIN"
+          SrcPort                 1
+          DstBlock                "voltage"
+          DstPort                 1
+          #GUID                   "033da3f7-f254-474d-a018-afe47082e3f5"
+        }
+        Line {
+          SrcBlock                "GAIN1"
+          SrcPort                 1
+          DstBlock                "current"
+          DstPort                 1
+          #GUID                   "646953c9-eac6-44f3-974e-32ad7421e713"
+        }
+        Line {
+          SrcBlock                "MBM__battery_VIP"
+          SrcPort                 1
+          DstBlock                "GAIN"
+          DstPort                 1
+          #GUID                   "aa48fdf5-6cc1-4e34-9afe-d167e032ba84"
+        }
+        Line {
+          SrcBlock                "MBM__battery_VIP"
+          SrcPort                 2
+          Points                  [70, 0; 0, 25]
+          DstBlock                "UTOI"
+          DstPort                 1
+          #GUID                   "473969e0-4d61-4b7a-82eb-60bcd8753467"
+        }
+        Line {
+          SrcBlock                "MBM__battery_VIP"
+          SrcPort                 4
+          Points                  [65, 0; 0, 40]
+          DstBlock                "UTOI1"
+          DstPort                 1
+          #GUID                   "cd9fa3a7-2974-42bd-8b29-68c05b7c4776"
+        }
+        Line {
+          SrcBlock                "UTOI"
+          SrcPort                 1
+          DstBlock                "GAIN1"
+          DstPort                 1
+          #GUID                   "f3026975-1cb3-49a1-9323-5b5c8362d195"
+        }
+        Line {
+          SrcBlock                "UTOI1"
+          SrcPort                 1
+          DstBlock                "power"
+          DstPort                 1
+          #GUID                   "665e70cd-1651-417a-9d7b-33ea50167dae"
+        }
+        Annotation {
+          Position                [90, 50]
+          Text                    "reserved"
+          HorizontalAlignment     "left"
+          VerticalAlignment       "top"
+          #ImgPth                 ""
+          BackgroundColor         [1, 1, 1]
+          ForegroundColor         "black"
+          BgOpacity               100
+          FontName                "Arial"
+          FontWeight              "normal"
+          FontAngle               "normal"
+          FontSize                10
+          Autosize                on
+          Width                   150
+          Height                  150
+          #GUID                   "ffdc498a-10c4-485e-8e6d-1ca3a31a3be6"
+        }
+      }
+      #SignalWatchMask        "07"
     }
     Block {
       BlockType               SubSystem
@@ -764,16 +1020,6 @@ Model {
         }
         Block {
           BlockType               Reference
-          Name                    "GAIN11"
-          Ports                   [1, 1, 0, 0, 0]
-          Position                [265, 378, 290, 392]
-          SourceBlock             "mathlib/GAIN"
-          k                       "0.1"
-          FontSize                10
-          #GUID                   "c6166aed-08dc-4c54-9149-463682c0f72b"
-        }
-        Block {
-          BlockType               Reference
           Name                    "GAIN2"
           Ports                   [1, 1, 0, 0, 0]
           Position                [265, 83, 290, 97]
@@ -781,16 +1027,6 @@ Model {
           k                       "0.01"
           FontSize                10
           #GUID                   "e9356a76-31f1-49f6-9c97-e07173509bf3"
-        }
-        Block {
-          BlockType               Reference
-          Name                    "GAIN3"
-          Ports                   [1, 1, 0, 0, 0]
-          Position                [265, 118, 290, 132]
-          SourceBlock             "mathlib/GAIN"
-          k                       "0.1"
-          FontSize                10
-          #GUID                   "125f5f2c-3e05-4a6f-932c-b434381d9383"
         }
         Block {
           BlockType               Reference
@@ -821,16 +1057,6 @@ Model {
           k                       "0.01"
           FontSize                10
           #GUID                   "9736d55c-11fe-46de-9ad7-c458af16ccc7"
-        }
-        Block {
-          BlockType               Reference
-          Name                    "GAIN7"
-          Ports                   [1, 1, 0, 0, 0]
-          Position                [265, 248, 290, 262]
-          SourceBlock             "mathlib/GAIN"
-          k                       "0.1"
-          FontSize                10
-          #GUID                   "c885bae3-72c7-4efb-b14a-5bb7f6c102ef"
         }
         Block {
           BlockType               Reference
@@ -1037,25 +1263,11 @@ Model {
           #GUID                   "45cd9eeb-95db-4d69-aa80-8d783a9f1c5a"
         }
         Line {
-          SrcBlock                "GAIN11"
-          SrcPort                 1
-          DstBlock                "T_power"
-          DstPort                 1
-          #GUID                   "d3e917dc-3910-4904-a34b-ade96efb1ee1"
-        }
-        Line {
           SrcBlock                "GAIN2"
           SrcPort                 1
           DstBlock                "R_frequency"
           DstPort                 1
           #GUID                   "0da56f08-6afc-4211-bf1c-62c4b4b1821b"
-        }
-        Line {
-          SrcBlock                "GAIN3"
-          SrcPort                 1
-          DstBlock                "R_power"
-          DstPort                 1
-          #GUID                   "7ff8b606-d84a-4662-91a4-72b3d179d696"
         }
         Line {
           SrcBlock                "GAIN4"
@@ -1077,13 +1289,6 @@ Model {
           DstBlock                "S_frequency"
           DstPort                 1
           #GUID                   "c69a0624-0584-471c-bb38-299e186013ea"
-        }
-        Line {
-          SrcBlock                "GAIN7"
-          SrcPort                 1
-          DstBlock                "S_power"
-          DstPort                 1
-          #GUID                   "6c050ab5-f0ed-478a-89b5-7c64893a50a3"
         }
         Line {
           SrcBlock                "GAIN8"
@@ -1197,60 +1402,394 @@ Model {
         Line {
           SrcBlock                "UTOI1"
           SrcPort                 1
-          DstBlock                "GAIN3"
+          DstBlock                "R_power"
           DstPort                 1
           #GUID                   "09be91fa-21ad-4e97-b7ce-bc984d799591"
         }
         Line {
           SrcBlock                "UTOI2"
           SrcPort                 1
-          DstBlock                "GAIN7"
+          DstBlock                "S_power"
           DstPort                 1
           #GUID                   "a3d2af6b-2244-49cf-bc7b-e0ab05370d4b"
         }
         Line {
           SrcBlock                "UTOI3"
           SrcPort                 1
-          DstBlock                "GAIN11"
+          DstBlock                "T_power"
           DstPort                 1
           #GUID                   "4c6aaf78-00bc-4a95-aa7e-8fead8496dac"
         }
       }
       #SignalWatchMask        "ff0f"
     }
+    Block {
+      BlockType               SubSystem
+      Name                    "temperature"
+      Ports                   [0, 2, 0, 0, 0]
+      Position                [70, 1171, 160, 1204]
+      FontSize                10
+      ShowPortLabels          on
+      MaskType                "REX sequence"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      #GUID                   "c5e25b8d-5352-4cbf-8bec-9f36ef3aa821"
+      System {
+        Name                    "temperature"
+        __CopyByReference       off
+        #GUID                   "c5e25b8d-5352-4cbf-8bec-9f36ef3aa821"
+        Block {
+          BlockType               Reference
+          Name                    "GAIN"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [125, 23, 150, 37]
+          SourceBlock             "mathlib/GAIN"
+          k                       ".1"
+          FontSize                10
+          #GUID                   "3db6dd92-27f3-41d4-87e7-68a0a1254249"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "GAIN1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [125, 43, 150, 57]
+          SourceBlock             "mathlib/GAIN"
+          k                       ".1"
+          FontSize                10
+          #GUID                   "d062d9b0-bb0b-4425-9dce-246bab470380"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "MBM__temperature"
+          Ports                   [0, 4, 0, 0, 0]
+          Position                [70, 22, 100, 68]
+          SourceBlock             "inoutlib/INQUAD"
+          FontSize                10
+          #GUID                   "b486859c-ff4e-4cbf-abc4-ce29a3cc8f80"
+          #SignalWatchMask        "0f"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "inverter_internal"
+          Position                [180, 23, 210, 37]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          Description             ""
+          FontSize                10
+          #GUID                   "8c1b7f3f-8d36-4e89-bc7b-0f0bc1dc6ce4"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "radiator"
+          Position                [180, 68, 210, 82]
+          Port                    2
+          OutDataTypeStr          "Inherit: auto"
+          Description             ""
+          FontSize                10
+          #GUID                   "43dba752-2e77-4604-aa99-be2d5e092bdb"
+        }
+        Line {
+          SrcBlock                "GAIN"
+          SrcPort                 1
+          DstBlock                "inverter_internal"
+          DstPort                 1
+          #GUID                   "6b319300-4c20-4256-9a63-34d1e2cda4aa"
+        }
+        Line {
+          SrcBlock                "GAIN1"
+          SrcPort                 1
+          Points                  [10, 0]
+          DstBlock                "radiator"
+          DstPort                 1
+          #GUID                   "92dc5878-a1ee-447c-920a-8ba5697cbc9a"
+        }
+        Line {
+          SrcBlock                "MBM__temperature"
+          SrcPort                 1
+          DstBlock                "GAIN"
+          DstPort                 1
+          #GUID                   "482e76ec-3d5c-4cad-9d86-30c599889c1b"
+        }
+        Line {
+          SrcBlock                "MBM__temperature"
+          SrcPort                 3
+          DstBlock                "GAIN1"
+          DstPort                 1
+          #GUID                   "b2f1dcfd-9aea-4c34-960d-28446b0b397e"
+        }
+      }
+      #SignalWatchMask        "03"
+    }
+    Block {
+      BlockType               SubSystem
+      Name                    "total_PV_feed"
+      Ports                   [0, 4, 0, 0, 0]
+      Position                [45, 1547, 145, 1593]
+      FontSize                10
+      ShowPortLabels          on
+      MaskType                "REX sequence"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      #GUID                   "7748b4bb-d17d-4f47-8423-291898a74ed6"
+      System {
+        Name                    "total_PV_feed"
+        __CopyByReference       off
+        #GUID                   "7748b4bb-d17d-4f47-8423-291898a74ed6"
+        Block {
+          BlockType               Reference
+          Name                    "GAIN"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [155, 28, 180, 42]
+          SourceBlock             "mathlib/GAIN"
+          k                       ".1"
+          FontSize                10
+          #GUID                   "624b954d-014d-412f-8b24-eef76d86a8d3"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "GAIN1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [155, 63, 180, 77]
+          SourceBlock             "mathlib/GAIN"
+          k                       ".1"
+          FontSize                10
+          #GUID                   "aa16ac67-b1a0-47e8-a7e5-c05b863d0427"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "GAIN2"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [155, 98, 180, 112]
+          SourceBlock             "mathlib/GAIN"
+          k                       ".1"
+          FontSize                10
+          #GUID                   "ef93a558-3c75-4409-8c90-93513aa6521a"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "MBM__total_PV_feed"
+          Ports                   [0, 4, 0, 0, 0]
+          Position                [45, 27, 75, 73]
+          SourceBlock             "inoutlib/INQUAD"
+          FontSize                10
+          #GUID                   "79d29b6f-3827-4989-9bbb-cde61e47dbc9"
+          #SignalWatchMask        "0f"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "total PV energy"
+          Position                [220, 28, 250, 42]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          Description             ""
+          FontSize                10
+          #GUID                   "991f50ff-249c-46e2-8644-236e88975979"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "today PV energy"
+          Position                [220, 63, 250, 77]
+          Port                    2
+          OutDataTypeStr          "Inherit: auto"
+          Description             ""
+          FontSize                10
+          #GUID                   "e382d4cb-c4f7-4736-83ef-26ec5054974e"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "total feed energy"
+          Position                [220, 98, 250, 112]
+          Port                    3
+          OutDataTypeStr          "Inherit: auto"
+          Description             ""
+          FontSize                10
+          #GUID                   "339861d1-938a-4382-8f21-375f760976be"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "total feeding hours"
+          Position                [220, 133, 250, 147]
+          Port                    4
+          OutDataTypeStr          "Inherit: auto"
+          Description             ""
+          FontSize                10
+          #GUID                   "fd3e5c4c-507c-4eda-a72c-276adce23702"
+        }
+        Line {
+          SrcBlock                "GAIN"
+          SrcPort                 1
+          DstBlock                "total PV energy"
+          DstPort                 1
+          #GUID                   "ac1663e8-d94c-4189-a82e-f7badc34cb8b"
+        }
+        Line {
+          SrcBlock                "GAIN1"
+          SrcPort                 1
+          DstBlock                "today PV energy"
+          DstPort                 1
+          #GUID                   "3506e6ad-7a7c-4a20-92b1-012844536e2e"
+        }
+        Line {
+          SrcBlock                "GAIN2"
+          SrcPort                 1
+          DstBlock                "total feed energy"
+          DstPort                 1
+          #GUID                   "cab291e1-be2d-4f37-9482-b88300a8dddc"
+        }
+        Line {
+          SrcBlock                "MBM__total_PV_feed"
+          SrcPort                 1
+          DstBlock                "GAIN"
+          DstPort                 1
+          #GUID                   "9a57c0ff-0478-414e-b8a1-fb4cc2058be4"
+        }
+        Line {
+          SrcBlock                "MBM__total_PV_feed"
+          SrcPort                 2
+          Points                  [50, 0; 0, 25]
+          DstBlock                "GAIN1"
+          DstPort                 1
+          #GUID                   "03ce379f-fd46-4017-88ad-317e6bcc0e0d"
+        }
+        Line {
+          SrcBlock                "MBM__total_PV_feed"
+          SrcPort                 3
+          Points                  [45, 0; 0, 50]
+          DstBlock                "GAIN2"
+          DstPort                 1
+          #GUID                   "91490f0f-f43f-4746-8463-6a5e556f245a"
+        }
+        Line {
+          SrcBlock                "MBM__total_PV_feed"
+          SrcPort                 4
+          Points                  [40, 0; 0, 75]
+          DstBlock                "total feeding hours"
+          DstPort                 1
+          #GUID                   "1b97247f-3967-45fa-8303-38ef857da5c4"
+        }
+        Annotation {
+          Position                [330, 70]
+          Text                    "Total PV Energy\nPV Energy in Today\nTotal Feed Energy to Grid\nTotal Feeding Hours"
+          HorizontalAlignment     "left"
+          VerticalAlignment       "top"
+          #ImgPth                 ""
+          BackgroundColor         [1, 1, 1]
+          ForegroundColor         "black"
+          BgOpacity               100
+          FontName                "Arial"
+          FontWeight              "normal"
+          FontAngle               "normal"
+          FontSize                9
+          Autosize                on
+          Width                   150
+          Height                  150
+          #GUID                   "cf0a5b24-62a9-4146-81f2-a63db3d3bcb0"
+        }
+      }
+    }
     Line {
       SrcBlock                "CNB"
       SrcPort                 1
-      DstBlock                "TRND"
+      DstBlock                "TRND_total_power"
       DstPort                 5
       #GUID                   "9de8898c-aa9e-4492-ad1e-b9f925cd16e5"
     }
     Line {
+      SrcBlock                "CNB1"
+      SrcPort                 1
+      DstBlock                "TRND_load_power"
+      DstPort                 5
+      #GUID                   "4197aef7-2259-4149-8571-c4ecef7befe8"
+    }
+    Line {
+      SrcBlock                "CNB2"
+      SrcPort                 1
+      DstBlock                "TRND_backup_power"
+      DstPort                 5
+      #GUID                   "c629346e-97f8-4793-be34-095bd9a94610"
+    }
+    Line {
       SrcBlock                "From1"
       SrcPort                 1
-      DstBlock                "TRND"
+      DstBlock                "TRND_total_power"
       DstPort                 1
       #GUID                   "9ef6dec0-feb2-460d-a791-e006ef731cb9"
     }
     Line {
+      SrcBlock                "From10"
+      SrcPort                 1
+      DstBlock                "TRND_load_power"
+      DstPort                 1
+      #GUID                   "a3aa686c-c5e8-4e64-a130-8efe004c2116"
+    }
+    Line {
+      SrcBlock                "From11"
+      SrcPort                 1
+      Points                  [20, 0; 0, -30]
+      DstBlock                "TRND_backup_power"
+      DstPort                 4
+      #GUID                   "c653141e-2c45-4ad2-a4db-3c44cf0bef68"
+    }
+    Line {
+      SrcBlock                "From12"
+      SrcPort                 1
+      Points                  [20, 0; 0, -30]
+      DstBlock                "TRND_load_power"
+      DstPort                 4
+      #GUID                   "7db8525b-1263-4ba1-9ed9-16b15baf5d12"
+    }
+    Line {
+      SrcBlock                "From13"
+      SrcPort                 1
+      DstBlock                "GAIN"
+      DstPort                 1
+      #GUID                   "09e383fc-3550-402d-bc9c-da34f9a3c01c"
+    }
+    Line {
       SrcBlock                "From15"
       SrcPort                 1
+      Points                  [0, -40]
       DstBlock                "RTOV3"
       DstPort                 6
       #GUID                   "11705306-1fb6-470f-b53b-41c70a17a5b7"
     }
     Line {
+      SrcBlock                "From19"
+      SrcPort                 1
+      DstBlock                "PARE_battery_status"
+      DstPort                 1
+      #GUID                   "f25673cd-0344-4a2f-a374-8a35d69502b8"
+    }
+    Line {
       SrcBlock                "From2"
       SrcPort                 1
       Points                  [55, 0; 0, -15]
-      DstBlock                "TRND"
+      DstBlock                "TRND_total_power"
       DstPort                 2
       #GUID                   "f0631e2d-5fbf-4436-8504-c76169af24d4"
     }
     Line {
+      SrcBlock                "From21"
+      SrcPort                 1
+      DstBlock                "PARE_work_mode"
+      DstPort                 1
+      #GUID                   "49d03df8-6800-413d-acd2-c0d4f92c1e1a"
+    }
+    Line {
+      SrcBlock                "From22"
+      SrcPort                 1
+      DstBlock                "PARE_error_message"
+      DstPort                 1
+      #GUID                   "b26a40bd-85c1-44eb-8e3b-8ea01a9e4bc7"
+    }
+    Line {
       SrcBlock                "From23"
       SrcPort                 1
-      Points                  [65, 0; 0, -20]
+      Points                  [65, 0; 0, -80]
       DstBlock                "RTOV3"
       DstPort                 7
       #GUID                   "bbe4d445-1d5a-484e-9eda-182c26c2e087"
@@ -1258,7 +1797,7 @@ Model {
     Line {
       SrcBlock                "From24"
       SrcPort                 1
-      Points                  [65, 0; 0, -40]
+      Points                  [65, 0; 0, -100]
       DstBlock                "RTOV3"
       DstPort                 8
       #GUID                   "ce4f4273-02b2-46c1-ab62-70582aecf37c"
@@ -1266,7 +1805,7 @@ Model {
     Line {
       SrcBlock                "From26"
       SrcPort                 1
-      Points                  [65, 0; 0, -60]
+      Points                  [65, 0; 0, -120]
       DstBlock                "RTOV3"
       DstPort                 9
       #GUID                   "132d95bd-67d9-477c-9363-13453e960aba"
@@ -1299,7 +1838,7 @@ Model {
       SrcBlock                "From3"
       SrcPort                 1
       Points                  [50, 0; 0, -30]
-      DstBlock                "TRND"
+      DstBlock                "TRND_total_power"
       DstPort                 3
       #GUID                   "0180746b-dabc-4cfa-987f-6e3099187789"
     }
@@ -1323,9 +1862,48 @@ Model {
       SrcBlock                "From4"
       SrcPort                 1
       Points                  [50, 0; 0, -45]
-      DstBlock                "TRND"
+      DstBlock                "TRND_total_power"
       DstPort                 4
       #GUID                   "ce8cbde7-c180-4de8-b566-d8d2b9e1c7f1"
+    }
+    Line {
+      SrcBlock                "From5"
+      SrcPort                 1
+      DstBlock                "TRND_backup_power"
+      DstPort                 1
+      #GUID                   "64e1b33d-0d54-4e23-bd72-c0427fea1d8f"
+    }
+    Line {
+      SrcBlock                "From6"
+      SrcPort                 1
+      Points                  [10, 0; 0, -10]
+      DstBlock                "TRND_backup_power"
+      DstPort                 2
+      #GUID                   "669457f0-1b5a-4b5e-b1f6-e5b8e87da424"
+    }
+    Line {
+      SrcBlock                "From7"
+      SrcPort                 1
+      Points                  [15, 0; 0, -20]
+      DstBlock                "TRND_backup_power"
+      DstPort                 3
+      #GUID                   "81cf36e8-b103-4a49-a46d-d10ecf34a215"
+    }
+    Line {
+      SrcBlock                "From8"
+      SrcPort                 1
+      Points                  [15, 0; 0, -20]
+      DstBlock                "TRND_load_power"
+      DstPort                 3
+      #GUID                   "95d21bf0-e74e-4724-bf36-e567eaa1b7f8"
+    }
+    Line {
+      SrcBlock                "From9"
+      SrcPort                 1
+      Points                  [10, 0; 0, -10]
+      DstBlock                "TRND_load_power"
+      DstPort                 2
+      #GUID                   "84fdfc74-50c0-4c3a-835e-bfe7b5833968"
     }
     Line {
       SrcBlock                "MBM__RTC"
@@ -1395,38 +1973,6 @@ Model {
       DstBlock                "ITOI"
       DstPort                 5
       #GUID                   "b5af34e3-8684-49f1-9358-ca3b231904bc"
-    }
-    Line {
-      SrcBlock                "MBM__total_PV_feed"
-      SrcPort                 1
-      Points                  [130, 0; 0, 55]
-      DstBlock                "RTOV3"
-      DstPort                 2
-      #GUID                   "6ed58bb2-4c7d-4e9d-b46d-fa345e48a9b7"
-    }
-    Line {
-      SrcBlock                "MBM__total_PV_feed"
-      SrcPort                 2
-      Points                  [130, 0; 0, 55]
-      DstBlock                "RTOV3"
-      DstPort                 3
-      #GUID                   "734db6cb-063f-48c1-bc06-1398aa2bbded"
-    }
-    Line {
-      SrcBlock                "MBM__total_PV_feed"
-      SrcPort                 3
-      Points                  [130, 0; 0, 55]
-      DstBlock                "RTOV3"
-      DstPort                 4
-      #GUID                   "54b37c30-1507-4dd8-8e64-c527e976f035"
-    }
-    Line {
-      SrcBlock                "MBM__total_PV_feed"
-      SrcPort                 4
-      Points                  [130, 0; 0, 55]
-      DstBlock                "RTOV3"
-      DstPort                 5
-      #GUID                   "3a3bf07a-33e9-49c5-8845-caa4d3fbfcfa"
     }
     Line {
       SrcBlock                "PV1"
@@ -1501,7 +2047,7 @@ Model {
     Line {
       SrcBlock                "RTOV3"
       SrcPort                 1
-      Points                  [-30, 0; 0, 75]
+      Points                  [5, 0; 0, 125; -70, 0]
       DstBlock                "RTOV4"
       DstPort                 1
       #GUID                   "056dbeb4-67a0-4c11-a8b0-7709296f9971"
@@ -1608,6 +2154,34 @@ Model {
       DstPort                 5
       #GUID                   "2e9720a0-1375-478a-bb71-faa6d228a96b"
     }
+    Line {
+      SrcBlock                "total_PV_feed"
+      SrcPort                 1
+      DstBlock                "RTOV3"
+      DstPort                 2
+      #GUID                   "6ed58bb2-4c7d-4e9d-b46d-fa345e48a9b7"
+    }
+    Line {
+      SrcBlock                "total_PV_feed"
+      SrcPort                 2
+      DstBlock                "RTOV3"
+      DstPort                 3
+      #GUID                   "734db6cb-063f-48c1-bc06-1398aa2bbded"
+    }
+    Line {
+      SrcBlock                "total_PV_feed"
+      SrcPort                 3
+      DstBlock                "RTOV3"
+      DstPort                 4
+      #GUID                   "54b37c30-1507-4dd8-8e64-c527e976f035"
+    }
+    Line {
+      SrcBlock                "total_PV_feed"
+      SrcPort                 4
+      DstBlock                "RTOV3"
+      DstPort                 5
+      #GUID                   "3a3bf07a-33e9-49c5-8845-caa4d3fbfcfa"
+    }
     Annotation {
       Position                [705, 430]
       Text                    "Loss, inverter disconnects to Grid\nOK, inverter connects to Grid\nFault, something is wrong"
@@ -1620,24 +2194,6 @@ Model {
       Width                   165
       Height                  25
       #GUID                   "71d1c998-d483-49c7-bdb6-0ca039011b7c"
-    }
-    Annotation {
-      Position                [160, 1555]
-      Text                    "Total PV Energy\nPV Energy in Today\nTotal Feed Energy to Grid\nTotal Feeding Hours"
-      HorizontalAlignment     "left"
-      VerticalAlignment       "top"
-      #ImgPth                 ""
-      BackgroundColor         [1, 1, 1]
-      ForegroundColor         "black"
-      BgOpacity               100
-      FontName                "Arial"
-      FontWeight              "normal"
-      FontAngle               "normal"
-      FontSize                9
-      Autosize                on
-      Width                   150
-      Height                  150
-      #GUID                   "cf0a5b24-62a9-4146-81f2-a63db3d3bcb0"
     }
   }
 }

@@ -41,7 +41,7 @@ Modbus {
     SlaveAdr                247
     RegisterAdr             35103
     Type                    0x00080204
-    Count                   4
+    Count                   2
   }
   Item {
     Name                    "PV1_power"
@@ -55,7 +55,7 @@ Modbus {
     SlaveAdr                247
     RegisterAdr             35107
     Type                    0x00080204
-    Count                   4
+    Count                   2
   }
   Item {
     Name                    "PV2_power"
@@ -65,10 +65,10 @@ Modbus {
     Count                   2
   }
   Item {
-    Name                    "PV1_mode"
+    Name                    "PV_mode"
     SlaveAdr                247
     RegisterAdr             35119
-    Type                    0x00080204
+    Type                    0x00080224
     Count                   2
   }
   Item {
@@ -102,7 +102,7 @@ Modbus {
   Item {
     Name                    "AC_reactive_power"
     SlaveAdr                247
-    RegisterAdr             35142
+    RegisterAdr             35141
     Type                    0x00080284
     Count                   1
   }
