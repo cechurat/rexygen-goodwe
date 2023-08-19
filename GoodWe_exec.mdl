@@ -50,9 +50,9 @@ Model {
       Position                [105, 133, 155, 147]
       SourceBlock             "execlib/ARC"
       atype                   "3: Disk"
-      asize                   102400
+      asize                   10240000
       nmarks                  720
-      ldaymax                 1048576
+      ldaymax                 104857600
       period                  300
       timesrc                 "1: CORETIMER"
       FontSize                10
