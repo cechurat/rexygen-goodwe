@@ -1,7 +1,7 @@
 Model {
   Name                    "GoodWe_exec"
   Version                 3.00
-  #RexVersion             "2.52.0 rev. 15511, Date 2023-07-13"
+  #RexVersion             "2.52.0 rev. 15123, Date 2023-03-29"
   ShowPortLabels          on
   SavedCharacterEncoding  "UTF-8"
   MaskType                "REX sequence"
@@ -41,7 +41,7 @@ Model {
   System {
     Name                    "GoodWe_exec"
     Location                [11, 35, 260, 449]
-    __ProjectState          "{\"runtime_mode\":0,\"simstepsinput_ticks\":1000,\"simstepsinput_time\":\"00:00:00.000\",\"simstepsinput_unit\":0,\"tabs\":{\"windows\":[{\"id\":\"tabs11\",\"tabs\":[{\"class\":\"mdl\",\"id\":\"GoodWe_exec.mdl\"},{\"class\":\"mdl\",\"id\":\"GoodWe_task.mdl\"},{\"class\":\"trend\",\"id\":\"GoodWe_task.TRNDV_total\"}]}]},\"watch_panel\":{\"signals\":[]}}"
+    __ProjectState          "{\"runtime_mode\":0,\"simstepsinput_ticks\":1000,\"simstepsinput_time\":\"00:00:00.000\",\"simstepsinput_unit\":0,\"tabs\":{\"windows\":[{\"id\":\"tabs11\",\"tabs\":[{\"class\":\"mdl\",\"id\":\"GoodWe_exec.mdl\"},{\"class\":\"mdl\",\"id\":\"GoodWe_task.mdl\"},{\"class\":\"submdl\",\"id\":\"GoodWe_task.mdl:GoodWe_task.settings\"},{\"class\":\"submdl\",\"id\":\"GoodWe_task.mdl:GoodWe_task.BMS_info\"}]}]},\"watch_panel\":{\"signals\":[]}}"
     #GUID                   "764087fb-0120-425a-b6c4-f0ad598d1aba"
     Block {
       BlockType               Reference
@@ -66,9 +66,9 @@ Model {
       SourceBlock             "execlib/EXEC"
       target                  "Generic target device"
       tick                    "0.01"
-      ntick0                  1
-      ntick1                  50
-      ntick2                  100
+      ntick0                  100
+      ntick1                  500
+      ntick2                  1000
       ntick3                  1200
       pri0                    5
       pri1                    9
@@ -87,7 +87,7 @@ Model {
       Ports                   [1, 1, 0, 0, 0]
       Position                [105, 203, 155, 217]
       SourceBlock             "execlib/TASK"
-      factor                  100
+      factor                  1
       start                   0
       stop                    1
       stack                   10240

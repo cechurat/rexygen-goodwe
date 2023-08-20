@@ -1,9 +1,9 @@
 Library {
   Name                    "GoodWe_lib"
   Version                 3.00
-  #RexVersion             "2.52.0 rev. 15511, Date 2023-07-13"
-  SavedCharacterEncoding  "UTF-8"
+  #RexVersion             "2.52.0 rev. 15123, Date 2023-03-29"
   ShowPortLabels          on
+  SavedCharacterEncoding  "UTF-8"
   MaskType                "REX sequence"
   MaskIconFrame           on
   MaskIconOpaque          on
@@ -69,7 +69,7 @@ Library {
         Block {
           BlockType               From
           Name                    "From33"
-          Position                [35, 98, 160, 112]
+          Position                [30, 98, 155, 112]
           ShowName                off
           GotoTag                 "MBM__PV<id>_power"
           FontSize                10
@@ -94,16 +94,6 @@ Library {
           k                       "0.1"
           FontSize                10
           #GUID                   "ec667538-8c7e-4287-92e2-fce53223a850"
-        }
-        Block {
-          BlockType               Reference
-          Name                    "GAIN2"
-          Ports                   [1, 1, 0, 0, 0]
-          Position                [180, 98, 205, 112]
-          SourceBlock             "mathlib/GAIN"
-          k                       "0.1"
-          FontSize                10
-          #GUID                   "2519c2a2-4737-4771-8b41-b33bb7f24778"
         }
         Block {
           BlockType               Reference
@@ -148,7 +138,7 @@ Library {
         Line {
           SrcBlock                "From33"
           SrcPort                 1
-          DstBlock                "GAIN2"
+          DstBlock                "power"
           DstPort                 1
           #GUID                   "641cc67b-dac8-4159-b842-8e49d4252ffc"
         }
@@ -166,13 +156,6 @@ Library {
           DstBlock                "current"
           DstPort                 1
           #GUID                   "626be349-0cce-4b3b-a731-f6716e24cb61"
-        }
-        Line {
-          SrcBlock                "GAIN2"
-          SrcPort                 1
-          DstBlock                "power"
-          DstPort                 1
-          #GUID                   "59742e66-69b2-462f-aa06-6170bb9a1ace"
         }
         Line {
           SrcBlock                "MBM__PV<id>"

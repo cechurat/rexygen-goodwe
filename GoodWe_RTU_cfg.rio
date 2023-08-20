@@ -1,6 +1,6 @@
 Modbus {
   Name                    "/dev/ttyUSB0"
-  BaudRate                9600
+  BaudRate                115200
   Parity                  0
   SyncTime                20
   SpaceTime               2
@@ -27,7 +27,21 @@ Modbus {
     SlaveAdr                247
     RegisterAdr             37002
     Type                    0x00000204
-    Count                   22
+    Count                   9
+  }
+  Item {
+    Name                    "Modbus_baudrate_R"
+    SlaveAdr                247
+    RegisterAdr             45132
+    Type                    0x00000224
+    Count                   2
+  }
+  Item {
+    Name                    "Modbus_baudrate_W"
+    SlaveAdr                247
+    RegisterAdr             45132
+    Type                    0x00000124
+    Count                   2
   }
   Item {
     Name                    "RTC"
@@ -383,14 +397,14 @@ Modbus {
     Name                    "E_total_sell"
     SlaveAdr                247
     RegisterAdr             36015
-    Type                    0x00080244
+    Type                    0x00080224
     Count                   2
   }
   Item {
     Name                    "E_total_buy"
     SlaveAdr                247
     RegisterAdr             36017
-    Type                    0x00080244
+    Type                    0x00080224
     Count                   2
   }
   Item {
@@ -399,19 +413,5 @@ Modbus {
     RegisterAdr             36019
     Type                    0x00080224
     Count                   24
-  }
-  Item {
-    Name                    "BMS_status_1"
-    SlaveAdr                247
-    RegisterAdr             37002
-    Type                    0x00080204
-    Count                   16
-  }
-  Item {
-    Name                    "BMS_status_2"
-    SlaveAdr                247
-    RegisterAdr             37018
-    Type                    0x00080204
-    Count                   6
   }
 }
