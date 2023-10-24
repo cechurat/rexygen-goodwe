@@ -1,6 +1,6 @@
 Modbus {
   Name                    "/dev/ttyUSB0"
-  BaudRate                115200
+  BaudRate                9600
   Parity                  0
   SyncTime                20
   SpaceTime               2
@@ -34,13 +34,6 @@ Modbus {
     SlaveAdr                247
     RegisterAdr             45132
     Type                    0x00000224
-    Count                   2
-  }
-  Item {
-    Name                    "Modbus_baudrate_W"
-    SlaveAdr                247
-    RegisterAdr             45132
-    Type                    0x00000124
     Count                   2
   }
   Item {

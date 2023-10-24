@@ -961,7 +961,6 @@ Model {
           SATF                    off
           FontSize                10
           #GUID                   "9cbbc17a-37b2-46ae-abb1-3460d0450131"
-          #SignalWatchMask        "0000"
         }
         Block {
           BlockType               Reference
@@ -1945,17 +1944,6 @@ Model {
         __CopyByReference       off
         #GUID                   "0f776bb5-8926-4c10-9717-60e7aea2663e"
         Block {
-          BlockType               Reference
-          Name                    "CNI"
-          Ports                   [0, 1, 0, 0, 0]
-          Position                [70, 68, 90, 82]
-          SourceBlock             "mathlib/CNI"
-          icn                     115200
-          vtype                   "4: Long (I32)"
-          FontSize                10
-          #GUID                   "fe61aa4a-cef4-4575-9050-edb61a513e05"
-        }
-        Block {
           BlockType               From
           Name                    "From27"
           Position                [90, 23, 285, 37]
@@ -1966,16 +1954,6 @@ Model {
           #SignalWatchMask        "01"
         }
         Block {
-          BlockType               Goto
-          Name                    "Goto"
-          Position                [165, 68, 360, 82]
-          ShowName                off
-          GotoTag                 "MBM__Modbus_baudrate_W"
-          TagVisibility           "local"
-          FontSize                10
-          #GUID                   "ca59cc22-e354-4c4f-924f-5f2402434c1f"
-        }
-        Block {
           BlockType               Outport
           Name                    "baudrate"
           Position                [330, 23, 360, 37]
@@ -1984,13 +1962,6 @@ Model {
           Description             ""
           FontSize                10
           #GUID                   "f9c24c5b-e158-47d9-988e-b6d21754a9bf"
-        }
-        Line {
-          SrcBlock                "CNI"
-          SrcPort                 1
-          DstBlock                "Goto"
-          DstPort                 1
-          #GUID                   "d0e9198e-3c8e-4ad5-ac62-1779886e7ddf"
         }
         Line {
           SrcBlock                "From27"
@@ -2335,7 +2306,6 @@ Model {
           SourceBlock             "inoutlib/INQUAD"
           FontSize                10
           #GUID                   "fa3c13db-6e97-41b7-aeb6-608269cfad03"
-          #SignalWatchMask        "00"
         }
         Block {
           BlockType               Outport
