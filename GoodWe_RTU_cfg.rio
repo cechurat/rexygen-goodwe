@@ -23,6 +23,13 @@ Modbus {
     Count                   40
   }
   Item {
+    Name                    "flash_eeprom_write_count"
+    SlaveAdr                247
+    RegisterAdr             36910
+    Type                    0x00000224
+    Count                   2
+  }
+  Item {
     Name                    "BMS"
     SlaveAdr                247
     RegisterAdr             37002
