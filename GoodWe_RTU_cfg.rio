@@ -44,6 +44,27 @@ Modbus {
     Count                   2
   }
   Item {
+    Name                    "battery_charge_curr_max"
+    SlaveAdr                247
+    RegisterAdr             45353
+    Type                    0x00000204
+    Count                   1
+  }
+  Item {
+    Name                    "battery_SOC_under_min"
+    SlaveAdr                247
+    RegisterAdr             45356
+    Type                    0x00000204
+    Count                   1
+  }
+  Item {
+    Name                    "app_operation_mode"
+    SlaveAdr                247
+    RegisterAdr             47000
+    Type                    0x00000204
+    Count                   1
+  }
+  Item {
     Name                    "RTC"
     SlaveAdr                247
     RegisterAdr             35100

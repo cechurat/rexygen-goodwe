@@ -349,16 +349,6 @@ Model {
       #GUID                   "c4642fb0-9bd7-43df-a50d-48106f1ccbdc"
     }
     Block {
-      BlockType               Reference
-      Name                    "CNB_disable_execution"
-      Ports                   [0, 1, 0, 0, 0]
-      Position                [570, 1828, 590, 1842]
-      SourceBlock             "mathlib/CNB"
-      YCN                     on
-      FontSize                10
-      #GUID                   "88ddee10-1f12-4d35-96aa-8f88dbec2663"
-    }
-    Block {
       BlockType               Display
       Name                    "Display"
       Position                [705, 1303, 785, 1327]
@@ -369,15 +359,6 @@ Model {
       DispValue               ""
       #GUID                   "c4050ceb-c279-446e-aa0e-f67ac75f371b"
       #SignalWatchMask        "10"
-    }
-    Block {
-      BlockType               Reference
-      Name                    "EDGE"
-      Ports                   [1, 1, 0, 0, 0]
-      Position                [585, 1868, 610, 1882]
-      SourceBlock             "logiclib/EDGE"
-      iedge                   "1: Rising edge"
-      #GUID                   "8db2ed68-0a90-4ecb-bf14-babf31b70d60"
     }
     Block {
       BlockType               From
@@ -777,17 +758,6 @@ Model {
     }
     Block {
       BlockType               Reference
-      Name                    "MP"
-      Ports                   [0, 1, 0, 0, 0]
-      Position                [550, 1868, 565, 1882]
-      SourceBlock             "genlib/MP"
-      BSTATE                  off
-      pwidth                  1
-      RPTF                    off
-      #GUID                   "fdb322b2-b40b-4efd-9cd7-333e0bf489c7"
-    }
-    Block {
-      BlockType               Reference
       Name                    "PARE_battery_status"
       Ports                   [2, 2, 0, 0, 0]
       Position                [320, 1398, 355, 1422]
@@ -1074,16 +1044,6 @@ Model {
       etype                   "8: Double (F64)"
       FontSize                10
       #GUID                   "8e92e18d-94a0-401f-8607-02c3ccd53125"
-    }
-    Block {
-      BlockType               Reference
-      Name                    "SRTF"
-      Ports                   [5, 2, 0, 0, 0]
-      Position                [685, 1828, 740, 1882]
-      SourceBlock             "execlib/SRTF"
-      bname                   "GoodWe_task.settings"
-      FontSize                10
-      #GUID                   "17af684f-fb52-48d2-b2c5-00a83a2cb59d"
     }
     Block {
       BlockType               Reference
@@ -1882,7 +1842,7 @@ Model {
       BlockType               SubSystem
       Name                    "settings"
       Ports                   [0, 1, 0, 0, 0]
-      Position                [515, 1950, 575, 1980]
+      Position                [335, 1960, 395, 1990]
       FontSize                10
       ShowPortLabels          on
       MaskType                "REX sequence"
@@ -1897,12 +1857,66 @@ Model {
         #GUID                   "0f776bb5-8926-4c10-9717-60e7aea2663e"
         Block {
           BlockType               From
+          Name                    "From1"
+          Position                [90, 88, 285, 102]
+          ShowName                off
+          GotoTag                 "MBM__app_operation_mode"
+          FontSize                10
+          #GUID                   "960635a5-056d-4f77-b62b-b32e468b0d99"
+          #SignalWatchMask        "01"
+        }
+        Block {
+          BlockType               From
+          Name                    "From2"
+          Position                [90, 118, 285, 132]
+          ShowName                off
+          GotoTag                 "MBM__battery_SOC_under_min"
+          FontSize                10
+          #GUID                   "844cdee7-9da3-44f9-8eb2-d5778132a237"
+          #SignalWatchMask        "01"
+        }
+        Block {
+          BlockType               From
           Name                    "From27"
           Position                [90, 23, 285, 37]
           ShowName                off
           GotoTag                 "MBM__Modbus_baudrate_R"
           FontSize                10
           #GUID                   "b1c95bc9-7477-4c2b-b385-beeff17cffd1"
+        }
+        Block {
+          BlockType               From
+          Name                    "From3"
+          Position                [90, 153, 285, 167]
+          ShowName                off
+          GotoTag                 "MBM__battery_charge_curr_max"
+          FontSize                10
+          #GUID                   "aeac6510-23c6-4170-b563-2b4d055abe44"
+          #SignalWatchMask        "01"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "GAIN"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [315, 153, 340, 167]
+          SourceBlock             "mathlib/GAIN"
+          k                       "0.1"
+          FontSize                10
+          #GUID                   "02f93ebb-37a0-4d59-8f1f-662c1d5385d9"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "PARE_working_mode"
+          Ports                   [2, 2, 0, 0, 0]
+          Position                [380, 88, 415, 112]
+          SourceBlock             "paramlib/PARE"
+          ipar                    "0: No battery, inverter disconnects to battery"
+          pupstr                  "0: General mode|1: Off grid mode|2: Backup mode|3: Eco mode|4: Eco charge mode|5: Eco discharge mode\\n"
+          NUM                     off
+          LIST                    off
+          SATF                    off
+          FontSize                10
+          #GUID                   "d92b31b6-81e6-460d-b46a-a389624c7d90"
         }
         Block {
           BlockType               Outport
@@ -1915,11 +1929,43 @@ Model {
           #GUID                   "f9c24c5b-e158-47d9-988e-b6d21754a9bf"
         }
         Line {
+          SrcBlock                "From1"
+          SrcPort                 1
+          DstBlock                "PARE_working_mode"
+          DstPort                 1
+          #GUID                   "67a45c59-5f71-4c12-bfd1-499730300b64"
+        }
+        Line {
           SrcBlock                "From27"
           SrcPort                 1
           DstBlock                "baudrate"
           DstPort                 1
           #GUID                   "5dae91b1-5daf-4cf2-98da-ece7f90a8d6c"
+        }
+        Line {
+          SrcBlock                "From3"
+          SrcPort                 1
+          DstBlock                "GAIN"
+          DstPort                 1
+          #GUID                   "1dd649d8-4210-4020-a982-24e82478fdd3"
+        }
+        Annotation {
+          Position                [470, 85]
+          Text                    ""
+          HorizontalAlignment     "left"
+          VerticalAlignment       "top"
+          #ImgPth                 "../../../Pictures/Screenshots/Snímek obrazovky 2023-10-25 220036.png"
+          BackgroundColor         [1, 1, 1]
+          ForegroundColor         "black"
+          BgOpacity               100
+          FontName                "Arial"
+          FontWeight              "normal"
+          FontAngle               "normal"
+          FontSize                10
+          Autosize                off
+          Width                   435
+          Height                  255
+          #GUID                   "cb007fc3-7339-401f-96bd-2dfc0f1f2dde"
         }
       }
     }
@@ -2045,7 +2091,6 @@ Model {
           GotoTag                 "MBM__E_sell_day"
           FontSize                10
           #GUID                   "21a72943-70bb-4d29-b17c-3223d2351e21"
-          #SignalWatchMask        "01"
         }
         Block {
           BlockType               From
@@ -2055,7 +2100,6 @@ Model {
           GotoTag                 "MBM__E_buy_total"
           FontSize                10
           #GUID                   "df2575f7-ce23-43ac-8271-738abf83ce28"
-          #SignalWatchMask        "01"
         }
         Block {
           BlockType               From
@@ -2065,7 +2109,6 @@ Model {
           GotoTag                 "MBM__E_buy_day"
           FontSize                10
           #GUID                   "af75a6e6-87e3-400e-9d88-5c69401f85c3"
-          #SignalWatchMask        "01"
         }
         Block {
           BlockType               From
@@ -2075,7 +2118,6 @@ Model {
           GotoTag                 "MBM__E_load_total"
           FontSize                10
           #GUID                   "627ec627-4c1a-4c62-bd75-06478d799c0d"
-          #SignalWatchMask        "01"
         }
         Block {
           BlockType               From
@@ -2085,7 +2127,6 @@ Model {
           GotoTag                 "MBM__E_load_day"
           FontSize                10
           #GUID                   "8a924d6a-1599-4e90-8752-2bef43a7b667"
-          #SignalWatchMask        "01"
         }
         Block {
           BlockType               From
@@ -2095,7 +2136,6 @@ Model {
           GotoTag                 "MBM__E_battery_charge_total"
           FontSize                10
           #GUID                   "8fa1eab2-6938-4428-8aa9-59e37402bb32"
-          #SignalWatchMask        "01"
         }
         Block {
           BlockType               From
@@ -2105,7 +2145,6 @@ Model {
           GotoTag                 "MBM__E_battery_charge_day"
           FontSize                10
           #GUID                   "2d9ab5ff-d316-47cd-b719-54347a7ef1f2"
-          #SignalWatchMask        "01"
         }
         Block {
           BlockType               From
@@ -2115,7 +2154,6 @@ Model {
           GotoTag                 "MBM__E_battery_discharge_total"
           FontSize                10
           #GUID                   "52cb9275-a1b9-4e79-95af-521a7bd6c272"
-          #SignalWatchMask        "01"
         }
         Block {
           BlockType               From
@@ -2125,7 +2163,6 @@ Model {
           GotoTag                 "MBM__E_battery_discharge_day"
           FontSize                10
           #GUID                   "61d78397-7a82-4f8a-85b0-dfa7858987d5"
-          #SignalWatchMask        "01"
         }
         Block {
           BlockType               Reference
@@ -2136,7 +2173,6 @@ Model {
           k                       ".1"
           FontSize                10
           #GUID                   "93253f0d-ab69-47e4-91da-6059e2a53a37"
-          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
@@ -2147,7 +2183,6 @@ Model {
           k                       ".1"
           FontSize                10
           #GUID                   "00522d27-a6a5-4027-a937-eec1743b356c"
-          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
@@ -2158,7 +2193,6 @@ Model {
           k                       ".1"
           FontSize                10
           #GUID                   "21ddcf04-8bc1-4700-be8e-84421348c586"
-          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
@@ -2169,7 +2203,6 @@ Model {
           k                       ".1"
           FontSize                10
           #GUID                   "e54c3eb1-56ec-4ef1-86b8-fc501baa23bc"
-          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
@@ -2180,7 +2213,6 @@ Model {
           k                       ".1"
           FontSize                10
           #GUID                   "c7f1f24c-c43e-4f4a-a374-3ecf599506d8"
-          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
@@ -2191,7 +2223,6 @@ Model {
           k                       ".1"
           FontSize                10
           #GUID                   "ec54f3eb-5a7e-44fd-bccb-f5fa2ac18e76"
-          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
@@ -2202,7 +2233,6 @@ Model {
           k                       ".1"
           FontSize                10
           #GUID                   "30a4f0c6-3b5e-4a18-bf0a-f79b03f59262"
-          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
@@ -2213,7 +2243,6 @@ Model {
           k                       ".1"
           FontSize                10
           #GUID                   "d14ef657-a1b7-41b2-8018-f3be99aa5de8"
-          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
@@ -2224,7 +2253,6 @@ Model {
           k                       ".1"
           FontSize                10
           #GUID                   "513cbf68-e30e-416e-9b95-db7f1cf105bf"
-          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
@@ -2235,7 +2263,6 @@ Model {
           k                       ".1"
           FontSize                10
           #GUID                   "80fb2378-2d73-4543-ba59-7798832666a6"
-          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
@@ -2246,7 +2273,6 @@ Model {
           k                       ".1"
           FontSize                10
           #GUID                   "0cdbf362-762d-42ba-a4dc-974eed9f1e38"
-          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
@@ -2257,7 +2283,6 @@ Model {
           k                       ".1"
           FontSize                10
           #GUID                   "59fa4ce3-ca3d-40be-90ba-6fb7a8ac164b"
-          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
@@ -2267,7 +2292,6 @@ Model {
           SourceBlock             "inoutlib/INQUAD"
           FontSize                10
           #GUID                   "fa3c13db-6e97-41b7-aeb6-608269cfad03"
-          #SignalWatchMask        "0f"
         }
         Block {
           BlockType               Outport
@@ -2639,21 +2663,6 @@ Model {
       #GUID                   "c613a0e9-7049-4625-aa64-9ddcea21b578"
     }
     Line {
-      SrcBlock                "CNB_disable_execution"
-      SrcPort                 1
-      DstBlock                "SRTF"
-      DstPort                 1
-      #GUID                   "7589a5cb-2b5f-4013-9a85-75458b464c27"
-    }
-    Line {
-      SrcBlock                "EDGE"
-      SrcPort                 1
-      Points                  [35, 0; 0, -30]
-      DstBlock                "SRTF"
-      DstPort                 2
-      #GUID                   "4f0b583c-42cd-4fd9-b4be-c0412a6d6a7d"
-    }
-    Line {
       SrcBlock                "From1"
       SrcPort                 1
       DstBlock                "TRND_total_power"
@@ -2871,13 +2880,6 @@ Model {
       DstBlock                "ITOI"
       DstPort                 5
       #GUID                   "b5af34e3-8684-49f1-9358-ca3b231904bc"
-    }
-    Line {
-      SrcBlock                "MP"
-      SrcPort                 1
-      DstBlock                "EDGE"
-      DstPort                 1
-      #GUID                   "2012cd68-a921-40aa-9add-45a8de437bfd"
     }
     Line {
       SrcBlock                "PV1"
