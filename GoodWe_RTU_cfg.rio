@@ -44,24 +44,45 @@ Modbus {
     Count                   2
   }
   Item {
-    Name                    "battery_charge_curr_max"
+    Name                    "battery_charge_curr_max_R"
     SlaveAdr                247
     RegisterAdr             45353
     Type                    0x00000204
     Count                   1
   }
   Item {
-    Name                    "battery_SOC_under_min"
+    Name                    "battery_SOC_under_min_R"
     SlaveAdr                247
     RegisterAdr             45356
     Type                    0x00000204
     Count                   1
   }
   Item {
-    Name                    "app_operation_mode"
+    Name                    "app_operation_mode_R"
     SlaveAdr                247
     RegisterAdr             47000
     Type                    0x00000204
+    Count                   1
+  }
+  Item {
+    Name                    "battery_charge_curr_max_W"
+    SlaveAdr                247
+    RegisterAdr             45353
+    Type                    0x00000104
+    Count                   1
+  }
+  Item {
+    Name                    "battery_SOC_under_min_W"
+    SlaveAdr                247
+    RegisterAdr             45356
+    Type                    0x00000104
+    Count                   1
+  }
+  Item {
+    Name                    "app_operation_mode_W"
+    SlaveAdr                247
+    RegisterAdr             47000
+    Type                    0x00000104
     Count                   1
   }
   Item {

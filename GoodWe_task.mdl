@@ -1856,11 +1856,72 @@ Model {
         __CopyByReference       off
         #GUID                   "0f776bb5-8926-4c10-9717-60e7aea2663e"
         Block {
+          BlockType               Reference
+          Name                    "CNI_battery_SOC_under_min"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [135, 283, 155, 297]
+          SourceBlock             "mathlib/CNI"
+          icn                     10
+          vtype                   "4: Long (I32)"
+          FontSize                10
+          BackgroundColor         "magenta"
+          #GUID                   "8d825d98-82af-439c-b3aa-abdc23e20306"
+          #SignalWatchMask        "01"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNR_battery_charge_curr_max"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [135, 338, 155, 352]
+          SourceBlock             "mathlib/CNR"
+          ycn                     "18.5"
+          BackgroundColor         "magenta"
+          FontSize                10
+          #GUID                   "15239ea7-4876-4484-9c1a-fb5297b60a36"
+          #SignalWatchMask        "01"
+        }
+        Block {
+          BlockType               Display
+          Name                    "Display"
+          Position                [470, 83, 550, 107]
+          ShowName                off
+          Format                  "Best fit"
+          Decimation              1
+          Suffix                  ""
+          DispValue               ""
+          #GUID                   "98f23532-7396-4dc1-ab74-3f3359bfeca7"
+          #SignalWatchMask        "11"
+        }
+        Block {
+          BlockType               Display
+          Name                    "Display1"
+          Position                [470, 148, 550, 172]
+          ShowName                off
+          Format                  "Best fit"
+          Decimation              1
+          Suffix                  ""
+          DispValue               ""
+          #GUID                   "730cb4cc-86db-4873-88e5-153396401e8c"
+          #SignalWatchMask        "11"
+        }
+        Block {
+          BlockType               Display
+          Name                    "Display2"
+          Position                [470, 118, 550, 142]
+          ShowName                off
+          Format                  "Best fit"
+          Decimation              1
+          Suffix                  ""
+          DispValue               ""
+          #GUID                   "4bdc4ddc-0e29-4e92-b4be-266949623f1a"
+          #SignalWatchMask        "11"
+        }
+        Block {
           BlockType               From
           Name                    "From1"
           Position                [90, 88, 285, 102]
           ShowName                off
-          GotoTag                 "MBM__app_operation_mode"
+          GotoTag                 "MBM__app_operation_mode_R"
           FontSize                10
           #GUID                   "960635a5-056d-4f77-b62b-b32e468b0d99"
           #SignalWatchMask        "01"
@@ -1868,9 +1929,9 @@ Model {
         Block {
           BlockType               From
           Name                    "From2"
-          Position                [90, 118, 285, 132]
+          Position                [90, 123, 285, 137]
           ShowName                off
-          GotoTag                 "MBM__battery_SOC_under_min"
+          GotoTag                 "MBM__battery_SOC_under_min_R"
           FontSize                10
           #GUID                   "844cdee7-9da3-44f9-8eb2-d5778132a237"
           #SignalWatchMask        "01"
@@ -1883,13 +1944,14 @@ Model {
           GotoTag                 "MBM__Modbus_baudrate_R"
           FontSize                10
           #GUID                   "b1c95bc9-7477-4c2b-b385-beeff17cffd1"
+          #SignalWatchMask        "01"
         }
         Block {
           BlockType               From
           Name                    "From3"
           Position                [90, 153, 285, 167]
           ShowName                off
-          GotoTag                 "MBM__battery_charge_curr_max"
+          GotoTag                 "MBM__battery_charge_curr_max_R"
           FontSize                10
           #GUID                   "aeac6510-23c6-4170-b563-2b4d055abe44"
           #SignalWatchMask        "01"
@@ -1903,10 +1965,55 @@ Model {
           k                       "0.1"
           FontSize                10
           #GUID                   "02f93ebb-37a0-4d59-8f1f-662c1d5385d9"
+          #SignalWatchMask        "03"
         }
         Block {
           BlockType               Reference
-          Name                    "PARE_working_mode"
+          Name                    "GAIN1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [245, 338, 270, 352]
+          SourceBlock             "mathlib/GAIN"
+          k                       10
+          FontSize                10
+          #GUID                   "6feb7a14-580e-42b4-aabe-3a1acaf0016b"
+          #SignalWatchMask        "03"
+        }
+        Block {
+          BlockType               Goto
+          Name                    "Goto"
+          Position                [345, 283, 540, 297]
+          ShowName                off
+          GotoTag                 "MBM__battery_SOC_under_min_W"
+          TagVisibility           "local"
+          FontSize                10
+          #GUID                   "7bd1513a-ea6f-4d66-ad14-47c493dad409"
+          #SignalWatchMask        "01"
+        }
+        Block {
+          BlockType               Goto
+          Name                    "Goto1"
+          Position                [345, 338, 540, 352]
+          ShowName                off
+          GotoTag                 "MBM__battery_charge_curr_max_W"
+          TagVisibility           "local"
+          FontSize                10
+          #GUID                   "7a289e04-ab86-4cf2-85e5-c3d6c3c8f470"
+          #SignalWatchMask        "01"
+        }
+        Block {
+          BlockType               Goto
+          Name                    "Goto2"
+          Position                [345, 203, 540, 217]
+          ShowName                off
+          GotoTag                 "MBM__app_operation_mode_W"
+          TagVisibility           "local"
+          FontSize                10
+          #GUID                   "ee639211-8290-4e7b-a6fa-0c8fddebd7fa"
+          #SignalWatchMask        "01"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "PARE_working_mode_R"
           Ports                   [2, 2, 0, 0, 0]
           Position                [380, 88, 415, 112]
           SourceBlock             "paramlib/PARE"
@@ -1917,6 +2024,53 @@ Model {
           SATF                    off
           FontSize                10
           #GUID                   "d92b31b6-81e6-460d-b46a-a389624c7d90"
+          #SignalWatchMask        "0f00"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "PARE_working_mode_W"
+          Ports                   [2, 2, 0, 0, 0]
+          Position                [125, 203, 160, 227]
+          SourceBlock             "paramlib/PARE"
+          ipar                    "0: No battery, inverter disconnects to battery"
+          pupstr                  "0: General mode|1: Off grid mode|2: Backup mode|3: Eco mode|4: Eco charge mode|5: Eco discharge mode\\n"
+          NUM                     off
+          LIST                    off
+          SATF                    off
+          FontSize                10
+          BackgroundColor         "magenta"
+          #GUID                   "9ae35edc-c5c9-4494-97c5-ee54f95b45b6"
+          #SignalWatchMask        "0f00"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SAT"
+          Ports                   [3, 3, 0, 0, 0]
+          Position                [290, 338, 320, 372]
+          SourceBlock             "reglib/SAT"
+          tp                      0
+          tn                      0
+          hilim0                  1000
+          lolim0                  0
+          HLD                     on
+          FontSize                10
+          #GUID                   "a4c3e044-8fde-4acc-9f2a-ba76c7fd0c53"
+          #SignalWatchMask        "3f00"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SAT1"
+          Ports                   [3, 3, 0, 0, 0]
+          Position                [290, 283, 320, 317]
+          SourceBlock             "reglib/SAT"
+          tp                      0
+          tn                      0
+          hilim0                  100
+          lolim0                  0
+          HLD                     on
+          FontSize                10
+          #GUID                   "bfe77663-3bc9-40fb-88c6-d11a192b6ffe"
+          #SignalWatchMask        "3f00"
         }
         Block {
           BlockType               Outport
@@ -1929,11 +2083,32 @@ Model {
           #GUID                   "f9c24c5b-e158-47d9-988e-b6d21754a9bf"
         }
         Line {
+          SrcBlock                "CNI_battery_SOC_under_min"
+          SrcPort                 1
+          DstBlock                "SAT1"
+          DstPort                 1
+          #GUID                   "d886b692-1a8c-4de7-842e-2879ac04ca5f"
+        }
+        Line {
+          SrcBlock                "CNR_battery_charge_curr_max"
+          SrcPort                 1
+          DstBlock                "GAIN1"
+          DstPort                 1
+          #GUID                   "658d3744-f7fd-4d84-818b-0914f3bbbf73"
+        }
+        Line {
           SrcBlock                "From1"
           SrcPort                 1
-          DstBlock                "PARE_working_mode"
+          DstBlock                "PARE_working_mode_R"
           DstPort                 1
           #GUID                   "67a45c59-5f71-4c12-bfd1-499730300b64"
+        }
+        Line {
+          SrcBlock                "From2"
+          SrcPort                 1
+          DstBlock                "Display2"
+          DstPort                 1
+          #GUID                   "4395dc86-93e5-47e8-9836-f2e8a9877f76"
         }
         Line {
           SrcBlock                "From27"
@@ -1949,8 +2124,50 @@ Model {
           DstPort                 1
           #GUID                   "1dd649d8-4210-4020-a982-24e82478fdd3"
         }
+        Line {
+          SrcBlock                "GAIN"
+          SrcPort                 1
+          DstBlock                "Display1"
+          DstPort                 1
+          #GUID                   "a7842966-f627-4431-a900-fa3dc6e52591"
+        }
+        Line {
+          SrcBlock                "GAIN1"
+          SrcPort                 1
+          DstBlock                "SAT"
+          DstPort                 1
+          #GUID                   "bc0c02a3-bbe1-4d53-a76a-14b1717af5b7"
+        }
+        Line {
+          SrcBlock                "PARE_working_mode_R"
+          SrcPort                 1
+          DstBlock                "Display"
+          DstPort                 1
+          #GUID                   "c26fa804-17b7-4c75-abd1-cdec9376c15e"
+        }
+        Line {
+          SrcBlock                "PARE_working_mode_W"
+          SrcPort                 1
+          DstBlock                "Goto2"
+          DstPort                 1
+          #GUID                   "7baeec3d-d535-47ba-a834-259226490254"
+        }
+        Line {
+          SrcBlock                "SAT"
+          SrcPort                 1
+          DstBlock                "Goto1"
+          DstPort                 1
+          #GUID                   "297b7b84-9563-4d5a-91c6-094e15f3b0f0"
+        }
+        Line {
+          SrcBlock                "SAT1"
+          SrcPort                 1
+          DstBlock                "Goto"
+          DstPort                 1
+          #GUID                   "e7f13c13-22fb-4df5-9676-a482d4780a02"
+        }
         Annotation {
-          Position                [470, 85]
+          Position                [655, 20]
           Text                    ""
           HorizontalAlignment     "left"
           VerticalAlignment       "top"
